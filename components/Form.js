@@ -20,7 +20,8 @@ export default class LoginScreen extends Component<{}> {
                <TextInput style={styles.inputBox} 
                     underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
                     placeholder="Password"
-                    placeholderTextColor= "#fff"
+                    placeholderTextColor= "#fff" 
+                    secureTextEntry={true}
                />
                <Button style={styles.buttonBox}>
                    <Text style={styles.buttonText}>

@@ -16,8 +16,11 @@ export default class LoginScreen extends Component<{}> {
                 <Logo/>
                 <Form/>
                 <view style={styles.signupContainer}>
-                    <Text>
-                        Don't have an account yet? Sign up!
+                    <Text style={styles.signupText}>
+                        Don't have an account yet? 
+                    </Text>
+                    <Text style={styles.signupButton}>
+                         Sign up!
                     </Text>
                 </view>
             </View>
@@ -34,7 +37,18 @@ const styles = StyleSheet.create({
     },
     signupContainer: {
       flexGrow: 1,
-      alignItems: 'center',
-      justifyContent: 'center'
+      alignItems: 'flex-end',
+      justifyContent: 'center',
+      paddingVertical: 16,
+      flexDirection: 'row',
+    },
+    signupText: {
+        color: 'rgba(255, 255, 255, 0.6)',
+        fontSize: 16,
+    }
+    signupButton: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight:'500',
     }
   });

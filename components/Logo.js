@@ -15,7 +15,7 @@ export default class Logo extends Component<{}> {
           style={{width: 50, height: 50}}
           source={require('../assets/images/smileyface.png')}
             />
-            <Text style={styles.logoText}>Logo</Text>
+            <Text style={styles.logoText}>Welcome to Boardwalk</Text>
             </view>
         )
     }
