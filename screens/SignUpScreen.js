@@ -2,7 +2,7 @@ import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import React, { useState, Component } from 'react';
-import { Platform, StatusBar, StyleSheet, View, Image, Button } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, Image, button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import AppNavigator from './navigation/AppNavigator';
@@ -11,25 +11,25 @@ import Form from '../components/Form';
 
 import {Actions} from 'react-native-router-flux';
 
-export default class LoginScreen extends Component<{}> {
-    signup(){
-        Actions.signup();
+export default class SignUpScreen extends Component<{}> {
+    goBack(){
+        Actions.pop();
     }
 
     render() {
         return(
             <View style={styles.container}>
                 <Logo/>
-                <Form type="Login"/>
+                <Form type="Signup"/>
                 <view style={styles.signupContainer}>
                     <Text style={styles.signupText}>
-                        Don't have an account yet? 
+                        Already have an account? 
                     </Text>
-                    <button onClick={this.signup}>
+                    <button onClick={this.goBack}>
                         <Text style={styles.signupButton}>
-                         Sign up!
+                            Log in!
                         </Text>
-                    </button>
+                    </button>    
                 </view>
             </View>
         )

@@ -7,14 +7,14 @@ import { Ionicons } from '@expo/vector-icons';
 
 import AppNavigator from './navigation/AppNavigator';
 
-import Login from './screens/LoginScreen';
+import Routes from './routes/Routes';
 
 export default class App extends Component<{}> {
   render() {
     return (
       <view style={styles.container}>
         <StatusBar backgroundColor="#1c313a" barStyle="light-content" />   
-        <Login/>     
+        <Routes/>     
       </view>
     );
   }

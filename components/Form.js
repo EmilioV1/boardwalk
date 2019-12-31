@@ -9,6 +9,9 @@ import AppNavigator from './navigation/AppNavigator';
 import Logo from '../components/Logo';
 
 export default class LoginScreen extends Component<{}> {
+
+    constructor()
+
     render() {
         return(
             <View style={styles.container}>
@@ -16,16 +19,20 @@ export default class LoginScreen extends Component<{}> {
                     underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
                     placeholder="Email"
                     placeholderTextColor= "#fff"
+                    selectionColor="#fff"
+                    keyboardType="email-address"
+                    onSubmitEditing={()=> this.password.focus()}
                />
                <TextInput style={styles.inputBox} 
                     underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
                     placeholder="Password"
                     placeholderTextColor= "#fff" 
                     secureTextEntry={true}
+                    ref={(input) => this.password = input}
                />
                <Button style={styles.buttonBox}>
                    <Text style={styles.buttonText}>
-                       Login
+                        {this.props.type}
                    </Text>
                </Button>
             </View>
