@@ -1,17 +1,12 @@
-import { AppLoading } from 'expo';
-import { Asset } from 'expo-asset';
-import * as Font from 'expo-font';
-import React, { useState, Component } from 'react';
-import { Platform, StatusBar, StyleSheet, View, Image, button } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import React, { Component } from 'react';
+import { StyleSheet, View, Text, Button } from 'react-native';
 
-import AppNavigator from './navigation/AppNavigator';
 import Logo from '../components/Logo';
 import Form from '../components/Form';
 
 import {Actions} from 'react-native-router-flux';
 
-export default class SignUpScreen extends Component<{}> {
+export default class SignUpScreen extends Component {
     goBack(){
         Actions.pop();
     }
@@ -21,16 +16,18 @@ export default class SignUpScreen extends Component<{}> {
             <View style={styles.container}>
                 <Logo/>
                 <Form type="Signup"/>
-                <view style={styles.signupContainer}>
+                <View style={styles.signupContainer}>
                     <Text style={styles.signupText}>
                         Already have an account? 
                     </Text>
-                    <button onClick={this.goBack}>
+                    <Button 
+                    title="Sign Up"
+                    onPress={this.goBack}>
                         <Text style={styles.signupButton}>
                             Log in!
                         </Text>
-                    </button>    
-                </view>
+                    </Button>    
+                </View>
             </View>
         )
     }

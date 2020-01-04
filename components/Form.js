@@ -1,16 +1,7 @@
-import { AppLoading } from 'expo';
-import { Asset } from 'expo-asset';
-import * as Font from 'expo-font';
-import React, { useState, Component } from 'react';
-import { Platform, StatusBar, StyleSheet, View, Image, TextInput, Button } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import React, { Component } from 'react';
+import {StyleSheet, View, TextInput, Button, Text } from 'react-native';
 
-import AppNavigator from './navigation/AppNavigator';
-import Logo from '../components/Logo';
-
-export default class LoginScreen extends Component<{}> {
-
-    constructor()
+export default class LoginScreen extends Component {
 
     render() {
         return(
@@ -30,9 +21,11 @@ export default class LoginScreen extends Component<{}> {
                     secureTextEntry={true}
                     ref={(input) => this.password = input}
                />
-               <Button style={styles.buttonBox}>
+               <Button 
+               title= "ARGGGGG"
+               style={styles.buttonBox}>
                    <Text style={styles.buttonText}>
-                        {this.props.type}
+                        {this.props.type}                       
                    </Text>
                </Button>
             </View>
