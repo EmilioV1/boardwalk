@@ -38,17 +38,17 @@ export default class LoginScreen extends Component {
 
     render() {
         return(
-            <View >
+            <View style={styles.container}>
                 <Logo/>
                 <Form type="Login"/>
-                <View >
-                    <Text >
+                <View style={styles.signupContainer}>
+                    <Text style={styles.signupText}>
                         Don't have an account yet? 
                     </Text>
                     <Button 
                     title="Sign In"
                     onPress={this.signup}>
-                        <Text >
+                        <Text style={styles.signupButton}>
                          Sign up!
                         </Text>
                     </Button>
