@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, View, TextInput, Button, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TextInput, Button } from 'react-native';
 
 import {Actions} from 'react-native-router-flux';
 
@@ -7,9 +7,10 @@ export default class LoginScreen extends Component {
 
     signup(){
         Actions.signup();
-    }
+    };
 
     render() {
+
         return(
             <View style={styles.container}>
                <TextInput style={styles.inputBox} 
@@ -43,14 +44,17 @@ export default class LoginScreen extends Component {
                </View>
                
             </View>
-        )
-    }
-}
+        );
+
+    };
+};
 
 const styles = StyleSheet.create({
+
     container: {
       flexGrow: 1,
     },
+
     inputBox: {
         width: 300,
         padding: 5,
@@ -61,12 +65,15 @@ const styles = StyleSheet.create({
         color: '#fff',
         marginVertical: 10,
     },
+
     buttonsContainer: {
         justifyContent: 'center',
         flexDirection: 'row'
     },
+
     button:{
         backgroundColor: 'black',
         margin:10,
     }
-  });
+    
+});
