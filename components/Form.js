@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import {StyleSheet, View, TextInput, Button, Text } from 'react-native';
+import {StyleSheet, View, TextInput, Button, Text, TouchableOpacity } from 'react-native';
+
+import {Actions} from 'react-native-router-flux';
 
 export default class LoginScreen extends Component {
+
+    signup(){
+        Actions.signup();
+    }
 
     render() {
         return(
@@ -21,13 +27,21 @@ export default class LoginScreen extends Component {
                     secureTextEntry={true}
                     ref={(input) => this.password = input}
                />
+               <View style={styles.buttonsContainer}>
+                   <View style={styles.button}>
                <Button 
-               title= "ARGGGGG"
-               style={styles.buttonBox}>
-                   <Text style={styles.buttonText}>
-                        {this.props.type}                       
-                   </Text>
-               </Button>
+               color= "#ffffff"
+               title= "Log In"/>
+               </View>
+
+               <View style={styles.button}>
+               <Button
+                    color= "#ffffff" 
+                    title="Sign Up"
+                    onPress={this.signup}/>
+               </View>
+               </View>
+               
             </View>
         )
     }
@@ -36,29 +50,23 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
     container: {
       flexGrow: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
     },
     inputBox: {
         width: 300,
+        padding: 5,
         backgroundColor: 'rgba(255, 255, 255, 0.3)',
-        borderRadius: 25,
+        borderRadius: 2,
         paddingHorizontal: 16,
-        fontSize: 16, 
+        fontSize: 30, 
         color: '#fff',
         marginVertical: 10,
     },
-    buttonBox: {
-        width: 300,
-        borderRadius: 25,
-        marginVertical: 10,
-        paddingVertical: 13,
-        backgroundColor: '#1c313a',
+    buttonsContainer: {
+        justifyContent: 'center',
+        flexDirection: 'row'
     },
-    buttonText: {
-        fontSize: 16,
-        fontWeight: '500',
-        color: '#fff',
-        textAlign: 'center'
+    button:{
+        backgroundColor: 'black',
+        margin:10,
     }
   });

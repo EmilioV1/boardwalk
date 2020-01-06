@@ -32,27 +32,12 @@ const styles = StyleSheet.create({
   });
 
 export default class LoginScreen extends Component {
-    signup(){
-        Actions.signup();
-    }
 
     render() {
         return(
             <View style={styles.container}>
                 <Logo/>
                 <Form type="Login"/>
-                <View style={styles.signupContainer}>
-                    <Text style={styles.signupText}>
-                        Don't have an account yet? 
-                    </Text>
-                    <Button 
-                    title="Sign In"
-                    onPress={this.signup}>
-                        <Text style={styles.signupButton}>
-                         Sign up!
-                        </Text>
-                    </Button>
-                </View>
             </View>
         )
     }
