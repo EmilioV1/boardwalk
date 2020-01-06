@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button,TextInput } from 'react-native';
 
 import Logo from '../components/Logo';
 import Form from '../components/Form';
@@ -14,20 +14,31 @@ export default class SignUpScreen extends Component {
     render() {
         return(
             <View style={styles.container}>
-                <Logo/>
-                <Form type="Signup"/>
-                <View style={styles.signupContainer}>
-                    <Text style={styles.signupText}>
-                        Already have an account? 
-                    </Text>
-                    <Button 
-                    title="Sign Up"
-                    onPress={this.goBack}>
-                        <Text style={styles.signupButton}>
-                            Log in!
-                        </Text>
-                    </Button>    
-                </View>
+                <View style={styles.container}>
+                <TextInput style={styles.inputBox} 
+                    underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                    placeholder="Name"
+                    placeholderTextColor= "#fff"
+                    selectionColor="#fff"
+                    keyboardType="email-address"
+                    onSubmitEditing={()=> this.password.focus()}
+               />
+               <TextInput style={styles.inputBox} 
+                    underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                    placeholder="Email"
+                    placeholderTextColor= "#fff"
+                    selectionColor="#fff"
+                    keyboardType="email-address"
+                    onSubmitEditing={()=> this.password.focus()}
+               />
+               <TextInput style={styles.inputBox} 
+                    underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                    placeholder="Password"
+                    placeholderTextColor= "#fff" 
+                    secureTextEntry={true}
+                    ref={(input) => this.password = input}
+               />
+            </View>
             </View>
         )
     }
@@ -50,7 +61,7 @@ const styles = StyleSheet.create({
     signupText: {
         color: 'rgba(255, 255, 255, 0.6)',
         fontSize: 16,
-    }
+    },
     signupButton: {
         color: '#fff',
         fontSize: 16,

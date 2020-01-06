@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, View } from 'react-native';
+import { StatusBar, StyleSheet, View, Text } from 'react-native';
+import {Router, Stack, Scene} from 'react-native-router-flux';
 
-import Routes from './routes/Routes';
+import Login from './screens/LoginScreen';
+import Signup from './screens/SignUpScreen';
+
 
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <StatusBar backgroundColor="#1c313a" barStyle="light-content" />   
-        <Routes/>     
-      </View>
-    );
-  }
+      <Router>
+      <Stack key="root" >
+        <Scene key="login" component={Login} title="Login" />
+        <Scene key="signup" component={Signup} title="Signup" />
+      </Stack>
+      </Router>
+
+    )}
 }
 
 const styles = StyleSheet.create({
