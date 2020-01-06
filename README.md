@@ -22,17 +22,17 @@ Application for financial goal planning. (Insert Blurb) Click [here](Insert Depl
 (Insert Synopsis)
 
 ### App View
-![LogIn](Insert Screenshot)
-![SignUp](Insert Screenshot)
-![MainMenu](Insert Screenshot)
-![Profile](Insert Screenshot)
-![NewDebt](Insert Screenshot)
-![OldDebt](Insert Screenshot)
-![FAQ](Insert Screenshot)
+* ![LogIn](Insert Screenshot)
+* ![SignUp](Insert Screenshot)
+* ![MainMenu](Insert Screenshot)
+* ![Profile](Insert Screenshot)
+* ![NewDebt](Insert Screenshot)
+* ![OldDebt](Insert Screenshot)
+* ![FAQ](Insert Screenshot)
 
 ## Author(s)
-[Emilio Valladares](https://github.com/emiliov1/)
-[Ria Anderson](https://github.com/RiaAnderson/)
-[Neha Nehru](https://github.com/Neha039/)
-[Nicky Ying](https://github.com/supercarboy88/)
+* [Emilio Valladares](https://github.com/emiliov1/)
+* [Ria Anderson](https://github.com/RiaAnderson/)
+* [Neha Nehru](https://github.com/Neha039/)
+* [Nicky Ying](https://github.com/supercarboy88/)
 
