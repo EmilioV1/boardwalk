@@ -33,7 +33,21 @@
     "react-navigation": "~4.0.10",
     "react-navigation-stack": "~1.10.3",
     "react-navigation-tabs": "~2.6.2",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "debug": "^4.1.1",
+    "express-session": "^1.17.0",
+    "mocha": "^6.2.2",
+    "mongoose": "^5.8.3",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "serve-favicon": "^2.5.0",
+    "should": "^13.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
