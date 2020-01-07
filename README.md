@@ -10,6 +10,8 @@ Application for financial goal planning. (Insert Blurb) Click [here](Insert Depl
 * Custom CSS
 * Request
 * Express
+* XCode
+* Android Studio
 
 ## Instructions
 1. 
