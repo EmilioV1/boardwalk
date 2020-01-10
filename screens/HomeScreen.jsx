@@ -3,15 +3,14 @@ import React from 'react';
 import {Actions} from 'react-native-router-flux';
 
 import {
-  Image,
-  Platform,
-  ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
 
+logout(){
+  Actions.pop();
+};
 
 export default function HomeScreen() {
 

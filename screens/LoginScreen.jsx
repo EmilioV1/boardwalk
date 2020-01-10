@@ -44,8 +44,11 @@ export default class LoginScreen extends Component {
             email: "",
             password: ""
         }
-    }
-    
+    };
+
+    home(){
+        Actions.home();
+    };
 
     signup(){
         Actions.signup();
@@ -54,7 +57,7 @@ export default class LoginScreen extends Component {
     checkCred = () => {
         if(this.state.email === credentials.email && this.state.password === credentials.password){
             this.props.handleAuth();
-            Actions.home();
+            this.home();
         }else{
             alert("email or password is wrong ");
         }
