@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View,  TextInput, Button  } from 'react-native';
+import { StyleSheet, ScrollView, View,  TextInput, Button  } from 'react-native';
 
 import Logo from '../components/Logo';
 import {Actions} from 'react-native-router-flux';
@@ -7,11 +7,11 @@ import {Actions} from 'react-native-router-flux';
 const styles = StyleSheet.create({
 
     container: {
-      backgroundColor: '#455a64',
+      backgroundColor: '#17233f',
       flex: 1,
       flexGrow: 1,
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
     inputBox: {
         width: 300,
@@ -65,6 +65,7 @@ export default class LoginScreen extends Component {
 
     render() {
         return(
+            <ScrollView>
             <View 
             style={styles.container}>
                 <Logo/>
@@ -103,6 +104,7 @@ export default class LoginScreen extends Component {
                
             </View>
             </View>
+            </ScrollView>
         )
     }
     
