@@ -19,26 +19,38 @@ export default class SignUpScreen extends Component {
                 style={styles.container}>
                     <TextInput style={styles.inputBox} 
                         underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
-                        placeholder="Name"
+                        placeholder="First"
                         placeholderTextColor= "#fff"
                         selectionColor="#fff"
                         keyboardType="email-address"
-                        onSubmitEditing={()=> this.password.focus()}
                     />
                     <TextInput style={styles.inputBox} 
+                        underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                        placeholder="Last"
+                        placeholderTextColor= "#fff"
+                        selectionColor="#fff"
+                        keyboardType="email-address"
+                    />
+
+                    {/* this needs to be changed to the upload file button */}
+                    <TextInput style={styles.inputBox} 
+                        underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                        placeholder="Image"
+                        placeholderTextColor= "#fff" 
+                        secureTextEntry={true}
+                    />
+                      <TextInput style={styles.inputBox} 
                         underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
                         placeholder="Email"
                         placeholderTextColor= "#fff"
                         selectionColor="#fff"
                         keyboardType="email-address"
-                        onSubmitEditing={()=> this.password.focus()}
                     />
                     <TextInput style={styles.inputBox} 
                         underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
                         placeholder="Password"
                         placeholderTextColor= "#fff" 
                         secureTextEntry={true}
-                        ref={(input) => this.password = input}
                     />
                 </View>
             </View>

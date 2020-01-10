@@ -1,48 +1,107 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, ScrollView, View,  TextInput, Button  } from 'react-native';
 
 import Logo from '../components/Logo';
-import Form from '../components/Form';
+import {Actions} from 'react-native-router-flux';
 
 const styles = StyleSheet.create({
 
     container: {
-      backgroundColor: '#455a64',
+      backgroundColor: '#17233f',
       flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
-
-    signupContainer: {
       flexGrow: 1,
-      alignItems: 'flex-end',
+      alignItems: 'center',
       justifyContent: 'center',
-      paddingVertical: 16,
-      flexDirection: 'row',
     },
-
-    signupText: {
-        color: 'rgba(255, 255, 255, 0.6)',
-        fontSize: 16,
-    },
-    
-    signupButton: {
+    inputBox: {
+        width: 300,
+        padding: 5,
+        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+        borderRadius: 2,
+        paddingHorizontal: 16,
+        fontSize: 30, 
         color: '#fff',
-        fontSize: 16,
-        fontWeight:'500',
-    }
+        marginVertical: 10,
+    },
 
+    buttonsContainer: {
+        justifyContent: 'center',
+        flexDirection: 'row'
+    },
+
+    button:{
+        backgroundColor: 'black',
+        margin:10,
+    }
 });
 
+const credentials = {email: "Emilio@gmail.com", password: "1234"}
+
 export default class LoginScreen extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            email: "",
+            password: ""
+        }
+    }
+    
+
+    signup(){
+        Actions.signup();
+    };
+
+    checkCred = () => {
+        if(this.state.email === credentials.email && this.state.password === credentials.password){
+            this.props.handleAuth();
+            Actions.home();
+        }else{
+            alert("email or password is wrong ");
+        }
+    }
 
     render() {
         return(
+            <ScrollView>
             <View 
             style={styles.container}>
                 <Logo/>
-                <Form type="Login"/>
+                <View style={styles.container}>
+               <TextInput style={styles.inputBox} 
+                    placeholder="Email"
+                    placeholderTextColor= "#fff"
+                    selectionColor="#fff"
+                    keyboardType="email-address"
+                    onChangeText = {(email) => {this.setState({email})}}
+                    value = {this.state.email}
+               />
+               <TextInput style={styles.inputBox} 
+                    placeholder="Password"
+                    placeholderTextColor= "#fff" 
+                    secureTextEntry={true}
+                    onChangeText = {(password) => {this.setState({password})}}
+                    value = {this.state.password}
+               />
+               <View style={styles.buttonsContainer}>
+                   <View style={styles.button}>
+               <Button 
+               color= "#ffffff"
+               title= "Log In"
+               onPress={this.checkCred}
+               />
+               </View>
+
+               <View style={styles.button}>
+               <Button
+                    color= "#ffffff" 
+                    title="Sign Up"
+                    onPress={this.signup}/>
+               </View>
+               </View>
+               
             </View>
+            </View>
+            </ScrollView>
         )
     }
     

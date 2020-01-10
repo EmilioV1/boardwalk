@@ -7,8 +7,8 @@ export default class Logo extends Component {
         return(
             <View style={styles.container}>
             <Image
-          style={{width: 50, height: 50}}
-          source={require('../assets/images/smileyface.png')}
+          style={{width: 300, height: 300, borderRadius: 50}}
+          source={require('../assets/images/LogoWhiteBackground.png')}
             />
             <Text style={styles.logoText}>Welcome to Boardwalk</Text>
             </View>
@@ -21,14 +21,15 @@ const styles = StyleSheet.create({
 
     container: {
          flexGrow: 1,
-         justifyContent: 'flex-end',
+         justifyContent: 'center',
          alignItems: 'center',
     },
 
     logoText: {
-        marginVertical: 15,
-        fontSize: 18,
-        color: 'rgba(255, 255, 255, 0.7)'
+        marginVertical: 50,
+        fontSize: 20,
+        color: '#fff',
+        // fontWeight: 'bold'
     }
 
 });
