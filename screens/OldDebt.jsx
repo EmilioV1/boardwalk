@@ -6,7 +6,7 @@ export default function OldDebt() {
 
   return (
     <View style={styles.container}>
-      <Text>Hello I am in oldDebt screen</Text>
+      <Text>Hello, I am the old debt screen!</Text>
     </View>
   );
 

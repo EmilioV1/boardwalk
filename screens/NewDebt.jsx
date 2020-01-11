@@ -6,7 +6,7 @@ export default function NewDebt() {
 
   return (
     <View style={styles.container}>
-      <Text>Hello I am in newDebt screen</Text>
+      <Text>Hello, I am the new debt screen!</Text>
     </View>
   );
 

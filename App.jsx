@@ -18,7 +18,6 @@ export default class App extends Component {
     this.setState({ loggedIn: true });
   }
 
-
   render() {
 
     return (
@@ -29,20 +28,14 @@ export default class App extends Component {
             <Scene key="profile" component={Profile} title="Profile" />
             <Scene key="newDebt" component={NewDebt} title="New Debt" />
             <Scene key="oldDebt" component={OldDebt} title="Old Debt" />
-            <Scene key="faq" component={Home} title="FAQ" />
+            <Scene key="faq" component={} title="FAQ" />
           </Stack> :
 
           <Stack key="root" >
             <Scene key="login" component={() => <Login handleAuth={this.handleAuth} />} title="Login" />
             <Scene key="signup" component={Signup} title="Signup" />
           </Stack>}
-
-
-
-
       </Router>
     );
-
   };
-
 };

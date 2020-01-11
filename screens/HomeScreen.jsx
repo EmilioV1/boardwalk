@@ -18,7 +18,7 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text>Hello I am in home screen</Text>
+      <Text>Hello, I am the home screen!</Text>
       <Button
         onPress={profile}
         title="Profile"

@@ -6,7 +6,7 @@ export default function ProfileScreen() {
 
   return (
     <View style={styles.container}>
-      <Text>Hello I am in profile screen</Text>
+      <Text>Hello, I am the profile screen!</Text>
     </View>
   );
 
