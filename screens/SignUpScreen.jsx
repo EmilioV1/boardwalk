@@ -5,56 +5,53 @@ import { Actions } from 'react-native-router-flux';
 
 export default class SignUpScreen extends Component {
 
-    goBack() {
-        Actions.pop();
-    };
 
     render() {
 
-        return(
+        return (
 
-            <View 
-            style={styles.container}>
-                <View 
+            <View
                 style={styles.container}>
-                    <TextInput style={styles.inputBox} 
-                        underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                <View
+                    style={styles.container}>
+                    <TextInput style={styles.inputBox}
+                        underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                         placeholder="First"
-                        placeholderTextColor= "#fff"
+                        placeholderTextColor="#fff"
                         selectionColor="#fff"
                         keyboardType="email-address"
                     />
-                    <TextInput style={styles.inputBox} 
-                        underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                    <TextInput style={styles.inputBox}
+                        underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                         placeholder="Last"
-                        placeholderTextColor= "#fff"
+                        placeholderTextColor="#fff"
                         selectionColor="#fff"
                         keyboardType="email-address"
                     />
 
                     {/* this needs to be changed to the upload file button */}
-                    <TextInput style={styles.inputBox} 
-                        underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                    <TextInput style={styles.inputBox}
+                        underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                         placeholder="Image"
-                        placeholderTextColor= "#fff" 
+                        placeholderTextColor="#fff"
                         secureTextEntry={true}
                     />
-                      <TextInput style={styles.inputBox} 
-                        underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                    <TextInput style={styles.inputBox}
+                        underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                         placeholder="Email"
-                        placeholderTextColor= "#fff"
+                        placeholderTextColor="#fff"
                         selectionColor="#fff"
                         keyboardType="email-address"
                     />
-                    <TextInput style={styles.inputBox} 
-                        underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                    <TextInput style={styles.inputBox}
+                        underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                         placeholder="Password"
-                        placeholderTextColor= "#fff" 
+                        placeholderTextColor="#fff"
                         secureTextEntry={true}
                     />
                 </View>
             </View>
-            
+
         );
 
     };
@@ -64,17 +61,17 @@ export default class SignUpScreen extends Component {
 const styles = StyleSheet.create({
 
     container: {
-      backgroundColor: '#455a64',
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center'
+        backgroundColor: '#455a64',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     signupContainer: {
-      flexGrow: 1,
-      alignItems: 'flex-end',
-      justifyContent: 'center',
-      paddingVertical: 16,
-      flexDirection: 'row',
+        flexGrow: 1,
+        alignItems: 'flex-end',
+        justifyContent: 'center',
+        paddingVertical: 16,
+        flexDirection: 'row',
     },
     signupText: {
         color: 'rgba(255, 255, 255, 0.6)',
@@ -83,7 +80,7 @@ const styles = StyleSheet.create({
     signupButton: {
         color: '#fff',
         fontSize: 16,
-        fontWeight:'500',
+        fontWeight: '500',
     }
 
 });
