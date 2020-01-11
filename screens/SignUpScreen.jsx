@@ -5,11 +5,8 @@ import { Actions } from 'react-native-router-flux';
 
 export default class SignUpScreen extends Component {
 
-
     render() {
-
         return (
-
             <View
                 style={styles.container}>
                 <View
@@ -51,17 +48,14 @@ export default class SignUpScreen extends Component {
                     />
                 </View>
             </View>
-
         );
-
     };
-
 };
 
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: '#455a64',
+        backgroundColor: '#17233f',
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
@@ -82,5 +76,4 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '500',
     }
-
 });

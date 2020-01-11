@@ -1,40 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View, TextInput, Button } from 'react-native';
-
-import Logo from '../components/Logo';
 import { Actions } from 'react-native-router-flux';
-
-const styles = StyleSheet.create({
-
-    container: {
-        backgroundColor: '#17233f',
-        flex: 1,
-        flexGrow: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-
-    inputBox: {
-        width: 300,
-        padding: 5,
-        backgroundColor: 'rgba(255, 255, 255, 0.3)',
-        borderRadius: 2,
-        paddingHorizontal: 16,
-        fontSize: 30,
-        color: '#fff',
-        marginVertical: 10,
-    },
-
-    buttonsContainer: {
-        justifyContent: 'center',
-        flexDirection: 'row'
-    },
-
-    button: {
-        backgroundColor: 'black',
-        margin: 10,
-    }
-});
+import Logo from '../components/Logo';
 
 const credentials = { email: "Emilio@gmail.com", password: "1234" }
 
@@ -55,7 +22,7 @@ export default class LoginScreen extends Component {
         if (this.state.email === credentials.email && this.state.password === credentials.password) {
             this.props.handleAuth();
         } else {
-            alert("email or password is wrong ");
+            alert("Email or password is wrong!");
         }
     }
 
@@ -100,5 +67,37 @@ export default class LoginScreen extends Component {
             </View>
         )
     }
-
 };
+
+const styles = StyleSheet.create({
+
+    container: {
+        backgroundColor: '#17233f',
+        flex: 1,
+        flexGrow: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    inputBox: {
+        width: 300,
+        padding: 5,
+        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+        borderRadius: 2,
+        paddingHorizontal: 16,
+        fontSize: 30,
+        color: '#fff',
+        marginVertical: 10,
+    },
+
+    buttonsContainer: {
+        justifyContent: 'center',
+        flexDirection: 'row'
+    },
+
+    button: {
+        backgroundColor: 'black',
+        margin: 10,
+        fontWeight: '500'
+    }
+});

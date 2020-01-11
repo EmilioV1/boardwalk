@@ -6,7 +6,7 @@ export default function ProfileScreen() {
 
   return (
     <View style={styles.container}>
-      <Text>Hello I am in profile screen</Text>
+      <Text style={styles.profileText}>Hello, I am the profile screen!</Text>
     </View>
   );
 
@@ -16,9 +16,12 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#17233f',
     alignItems: 'center',
     justifyContent: 'center'
   },
 
+  profileText: {
+    color: '#fff'
+  }
 });

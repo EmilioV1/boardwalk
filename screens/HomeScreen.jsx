@@ -1,6 +1,7 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, ScrollView, View, TextInput, Button, Text } from 'react-native';
+import { StyleSheet, View, Button, Text } from 'react-native';
+import Logo from '../components/Logo';
 
 export default function HomeScreen() {
 
@@ -18,34 +19,56 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text>Hello I am in home screen</Text>
-      <Button
-        onPress={profile}
-        title="Profile"
-      >
-      </Button>
-      <Button
-        onPress={newDebt}
-        title="New Debt"
-      >
-      </Button>
-      <Button
-        onPress={oldDebt}
-        title="Old Debt"
-      >
-      </Button>
+      <Logo />
+      <Text style={styles.homeText}>Hello, I am the home screen!</Text>
+      <View style={styles.homeButtonsContainer}>
+        <View style={styles.homeButtons}>
+          <Button
+            onPress={profile}
+            title="Profile"
+          >
+          </Button>
+        </View>
+        <View style={styles.homeButtons}>
+          <Button
+            onPress={newDebt}
+            title="New Debt"
+          >
+          </Button>
+        </View>
+        <View style={styles.homeButtons}>
+          <Button
+            onPress={oldDebt}
+            title="Old Debt"
+          >
+          </Button>
+        </View>
+      </View>
     </View>
   );
-
 };
 
 const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#17233f',
     alignItems: 'center',
     justifyContent: 'center'
   },
+
+  homeText: {
+    color: '#fff'
+  },
+
+  homeButtonsContainer: {
+    justifyContent: 'center',
+  },
+
+  homeButtons: {
+    backgroundColor: 'black',
+    margin: 10,
+    fontWeight: '500',
+  }
 
 });

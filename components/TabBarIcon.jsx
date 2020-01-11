@@ -13,5 +13,4 @@ export default function TabBarIcon(props) {
       color={props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
     />
   );
-
 };

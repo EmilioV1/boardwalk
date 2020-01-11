@@ -6,7 +6,7 @@ export default function OldDebt() {
 
   return (
     <View style={styles.container}>
-      <Text>Hello I am in oldDebt screen</Text>
+      <Text style={styles.oldDebtText}>Hello, I am the old debt screen!</Text>
     </View>
   );
 
@@ -16,9 +16,13 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#17233f',
     alignItems: 'center',
     justifyContent: 'center'
   },
+
+  oldDebtText: {
+    color: '#fff'
+  }
 
 });

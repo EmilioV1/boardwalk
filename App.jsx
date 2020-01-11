@@ -18,7 +18,6 @@ export default class App extends Component {
     this.setState({ loggedIn: true });
   }
 
-
   render() {
 
     return (
@@ -36,13 +35,7 @@ export default class App extends Component {
             <Scene key="login" component={() => <Login handleAuth={this.handleAuth} />} title="Login" />
             <Scene key="signup" component={Signup} title="Signup" />
           </Stack>}
-
-
-
-
       </Router>
     );
-
   };
-
 };
