@@ -12,11 +12,11 @@ export default class App extends Component {
 
   state = {
     loggedIn: false
-  }
+  };
 
   handleAuth = () => {
     this.setState({ loggedIn: true });
-  }
+  };
 
   render() {
 

@@ -7,7 +7,7 @@ export default class Logo extends Component {
         return (
             <View style={styles.container}>
                 <Image
-                    style={{ width: 275, height: 275, borderRadius: 50 }}
+                    style={{ width: 250, height: 250, borderRadius: 50 }}
                     source={require('../assets/images/LogoWhiteBackground.png')}
                 />
                 <Text style={styles.logoText}>Welcome to Boardwalk</Text>

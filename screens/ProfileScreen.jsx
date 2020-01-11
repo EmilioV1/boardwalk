@@ -6,7 +6,7 @@ export default function ProfileScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.profileText}>Hello, I am the profile screen!</Text>
+      <Text style={styles.profileText}>[USER'S NAME]</Text>
       <View>
         <TextInput style={styles.inputBox}
           placeholder="Annual Income"
@@ -36,10 +36,17 @@ export default function ProfileScreen() {
           keyboardType="email-address"
           keyboardAppearance='dark'
         />
+        <View style={styles.buttonsContainer}>
+          <View style={styles.button}>
+            <Button
+              color="#ffffff"
+              title="Submit"
+            />
+          </View>
+        </View>
       </View>
     </View>
   );
-
 };
 
 const styles = StyleSheet.create({
@@ -64,5 +71,16 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: '#fff',
     marginVertical: 10,
+  },
+
+  buttonsContainer: {
+    justifyContent: 'center',
+    flexDirection: 'row'
+  },
+
+  button: {
+    backgroundColor: 'black',
+    margin: 10,
+    fontWeight: '500'
   }
 });
