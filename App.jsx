@@ -28,7 +28,7 @@ export default class App extends Component {
             <Scene key="profile" component={Profile} title="Profile" />
             <Scene key="newDebt" component={NewDebt} title="New Debt" />
             <Scene key="oldDebt" component={OldDebt} title="Old Debt" />
-            <Scene key="faq" component={} title="FAQ" />
+            <Scene key="faq" component={Home} title="FAQ" />
           </Stack> :
 
           <Stack key="root" >
