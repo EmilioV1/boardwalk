@@ -55,7 +55,7 @@ export default class SignUpScreen extends Component {
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: '#455a64',
+        backgroundColor: '#17233f',
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
