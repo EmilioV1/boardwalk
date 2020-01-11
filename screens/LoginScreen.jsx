@@ -39,6 +39,7 @@ export default class LoginScreen extends Component {
                             keyboardType="email-address"
                             onChangeText={(email) => { this.setState({ email }) }}
                             value={this.state.email}
+                            keyboardAppearance='dark'
                         />
                         <TextInput style={styles.inputBox}
                             placeholder="Password"
@@ -46,6 +47,7 @@ export default class LoginScreen extends Component {
                             secureTextEntry={true}
                             onChangeText={(password) => { this.setState({ password }) }}
                             value={this.state.password}
+                            keyboardAppearance='dark'
                         />
                         <View style={styles.buttonsContainer}>
                             <View style={styles.button}>

@@ -12,39 +12,39 @@ export default class SignUpScreen extends Component {
                 <View
                     style={styles.container}>
                     <TextInput style={styles.inputBox}
-                        underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                         placeholder="First"
                         placeholderTextColor="#fff"
                         selectionColor="#fff"
                         keyboardType="email-address"
+                        keyboardAppearance='dark'
                     />
                     <TextInput style={styles.inputBox}
-                        underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                         placeholder="Last"
                         placeholderTextColor="#fff"
                         selectionColor="#fff"
                         keyboardType="email-address"
+                        keyboardAppearance='dark'
                     />
 
                     {/* this needs to be changed to the upload file button */}
                     <TextInput style={styles.inputBox}
-                        underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                         placeholder="Image"
                         placeholderTextColor="#fff"
                         secureTextEntry={true}
+                        keyboardAppearance='dark'
                     />
                     <TextInput style={styles.inputBox}
-                        underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                         placeholder="Email"
                         placeholderTextColor="#fff"
                         selectionColor="#fff"
                         keyboardType="email-address"
+                        keyboardAppearance='dark'
                     />
                     <TextInput style={styles.inputBox}
-                        underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                         placeholder="Password"
                         placeholderTextColor="#fff"
                         secureTextEntry={true}
+                        keyboardAppearance='dark'
                     />
                 </View>
             </View>
@@ -75,5 +75,16 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
         fontWeight: '500',
+    },
+
+    inputBox: {
+        width: 300,
+        padding: 5,
+        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+        borderRadius: 2,
+        paddingHorizontal: 16,
+        fontSize: 30,
+        color: '#fff',
+        marginVertical: 10,
     }
 });
