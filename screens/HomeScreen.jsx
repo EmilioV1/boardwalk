@@ -1,22 +1,39 @@
-import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
-import {Actions} from 'react-native-router-flux';
-
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-
-logout(){
-  Actions.pop();
-};
+import { Actions } from 'react-native-router-flux';
+import { StyleSheet, ScrollView, View, TextInput, Button, Text } from 'react-native';
 
 export default function HomeScreen() {
 
+  const profile = () => {
+    Actions.profile();
+  };
+
+  const newDebt = () => {
+    Actions.newDebt();
+  };
+
+  const oldDebt = () => {
+    Actions.oldDebt();
+  };
+
   return (
-    <View style ={styles.container}>
+    <View style={styles.container}>
       <Text>Hello I am in home screen</Text>
+      <Button
+        onPress={profile}
+        title="Profile"
+      >
+      </Button>
+      <Button
+        onPress={newDebt}
+        title="New Debt"
+      >
+      </Button>
+      <Button
+        onPress={oldDebt}
+        title="Old Debt"
+      >
+      </Button>
     </View>
   );
 

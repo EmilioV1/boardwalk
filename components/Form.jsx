@@ -1,48 +1,48 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TextInput, Button } from 'react-native';
 
-import {Actions} from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 
 export default class LoginScreen extends Component {
 
-    signup(){
+    signup() {
         Actions.signup();
     };
 
     render() {
 
-        return(
+        return (
             <View style={styles.container}>
-               <TextInput style={styles.inputBox} 
-                    underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                <TextInput style={styles.inputBox}
+                    underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                     placeholder="Email"
-                    placeholderTextColor= "#fff"
+                    placeholderTextColor="#fff"
                     selectionColor="#fff"
                     keyboardType="email-address"
-                    onSubmitEditing={()=> this.password.focus()}
-               />
-               <TextInput style={styles.inputBox} 
-                    underlineColorAndroid={'rgba(0, 0, 0, 0)'} 
+                    onSubmitEditing={() => this.password.focus()}
+                />
+                <TextInput style={styles.inputBox}
+                    underlineColorAndroid={'rgba(0, 0, 0, 0)'}
                     placeholder="Password"
-                    placeholderTextColor= "#fff" 
+                    placeholderTextColor="#fff"
                     secureTextEntry={true}
                     ref={(input) => this.password = input}
-               />
-               <View style={styles.buttonsContainer}>
-                   <View style={styles.button}>
-               <Button 
-               color= "#ffffff"
-               title= "Log In"/>
-               </View>
+                />
+                <View style={styles.buttonsContainer}>
+                    <View style={styles.button}>
+                        <Button
+                            color="#ffffff"
+                            title="Log In" />
+                    </View>
 
-               <View style={styles.button}>
-               <Button
-                    color= "#ffffff" 
-                    title="Sign Up"
-                    onPress={this.signup}/>
-               </View>
-               </View>
-               
+                    <View style={styles.button}>
+                        <Button
+                            color="#ffffff"
+                            title="Sign Up"
+                            onPress={this.signup} />
+                    </View>
+                </View>
+
             </View>
         );
 
@@ -52,7 +52,7 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
 
     container: {
-      flexGrow: 1,
+        flexGrow: 1,
     },
 
     inputBox: {
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255, 255, 255, 0.3)',
         borderRadius: 2,
         paddingHorizontal: 16,
-        fontSize: 30, 
+        fontSize: 30,
         color: '#fff',
         marginVertical: 10,
     },
@@ -71,9 +71,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
 
-    button:{
+    button: {
         backgroundColor: 'black',
-        margin:10,
+        margin: 10,
     }
-    
+
 });
