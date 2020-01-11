@@ -63,12 +63,13 @@ const styles = StyleSheet.create({
 
   homeButtonsContainer: {
     justifyContent: 'center',
+    flex: 10 
   },
 
   homeButtons: {
     backgroundColor: 'black',
     margin: 10,
-    fontWeight: '500',
+    fontWeight: '500'
   }
 
 });
