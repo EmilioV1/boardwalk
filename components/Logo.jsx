@@ -7,7 +7,7 @@ export default class Logo extends Component {
         return (
             <View style={styles.container}>
                 <Image
-                    style={{ width: 300, height: 300, borderRadius: 50 }}
+                    style={{ width: 275, height: 275, borderRadius: 50 }}
                     source={require('../assets/images/LogoWhiteBackground.png')}
                 />
                 <Text style={styles.logoText}>Welcome to Boardwalk</Text>
@@ -26,10 +26,9 @@ const styles = StyleSheet.create({
     },
 
     logoText: {
-        marginVertical: 50,
+        marginVertical: 40,
         fontSize: 20,
         color: '#fff',
-        // fontWeight: 'bold'
     }
 
 });

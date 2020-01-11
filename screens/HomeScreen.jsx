@@ -1,6 +1,7 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
 import { StyleSheet, View, Button, Text } from 'react-native';
+import Logo from '../components/Logo';
 
 export default function HomeScreen() {
 
@@ -18,6 +19,7 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
+      <Logo />
       <Text style={styles.homeText}>Hello, I am the home screen!</Text>
       <View style={styles.homeButtonsContainer}>
         <View style={styles.homeButtons}>
@@ -60,12 +62,13 @@ const styles = StyleSheet.create({
   },
 
   homeButtonsContainer: {
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
 
   homeButtons: {
-      backgroundColor: 'black',
-      margin: 10,
+    backgroundColor: 'black',
+    margin: 10,
+    fontWeight: '500',
   }
 
 });

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View, TextInput, Button } from 'react-native';
-
-import Logo from '../components/Logo';
 import { Actions } from 'react-native-router-flux';
+import Logo from '../components/Logo';
 
 const credentials = { email: "Emilio@gmail.com", password: "1234" }
 
@@ -99,5 +98,6 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: 'black',
         margin: 10,
+        fontWeight: '500'
     }
 });
