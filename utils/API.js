@@ -1,41 +1,34 @@
 import axios from "axios";
 
-const heroku = 'https://backend-boardwalk.herokuapp.com/'
+const heroku = 'https://radiant-stream-91922.herokuapp.com/'
+
+// const heroku = 'https://backend-boardwalk.herokuapp.com/'
 
 export default {
 
   // ======== USER AUTHENTICATION ======== 
-  logIn: function(body) {
-    return axios({
-      method: 'post',
-      headers: { 'content-type': 'application/json' },
-      url: heroku + '/api/auth/login',
-      data: body
-    });
-  }, 
+//   signup: function (email, password) {
+//     return axios.post(heroku + "/api/users", { email: email, password: password});
+// },
+// login: function (email, password) {
+//     return axios.post(heroku + "/auth/login", { email: email, password: password});
+// }
+// };
 
-  // Signup
-  signUp: function(body) {
-    return axios({
-      method: 'post',
-      headers: { 'content-type': 'application/json' },
-      url: heroku + '/api/auth/signup',
-      data: body
-    });
-  }, 
-
-  //Logout
-  logOut: function() {
-    return axios.get(heroku + "/api/auth/logout");
-  },
-
-  //Update Profile
-  update: function(body) {
-    return axios({
-      method: 'put',
-      headers: { 'content-type': 'application/json' },
-      url: heroku + '/api/users/find/currentUser',
-      data: body
-    });
-  }
+signup: function (body) {
+  return axios({
+    method: 'post',
+    headers: { 'content-type': 'application/json' },
+    url: heroku + "/api/users", 
+    data:body
+  });
+},
+login: function (body) {
+  return axios({
+    method: 'post',
+    headers:{ 'content-type': 'application/json' },
+    url: heroku + "/auth/login",
+    data: body
+  });
+}
 };

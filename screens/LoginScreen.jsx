@@ -2,29 +2,36 @@ import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View, TextInput, Button } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Logo from '../components/Logo';
+import API from '../utils/API';
 
-const credentials = { email: "Emilio@gmail.com", password: "1234" }
+// const credentials = { email: "Emilio@gmail.com", password: "1234" }
 
 export default class LoginScreen extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: "",
-            password: ""
-        }
+    state = {
+        email: "",
+        password: "",
+        error: ""
     };
 
     signup() {
         Actions.signup();
     };
 
-    checkCred = () => {
-        if (this.state.email === credentials.email && this.state.password === credentials.password) {
-            this.props.handleAuth();
-        } else {
-            alert("Email or password is wrong!");
-        }
-    }
+    handleSubmit = event => {
+        event.preventDefault();
+
+        const { email, password } = this.state; //grab the current state for email and password
+
+        API.login(email, password)
+            .then(result => {
+                this.setState({ error: "" });
+                this.props.onSuccess(result.data);
+            })
+            .catch(err => {
+                console.log(err);
+                this.setState({error: err});
+            });
+    };
 
     render() {
         return (
@@ -54,7 +61,7 @@ export default class LoginScreen extends Component {
                                 <Button
                                     color="#ffffff"
                                     title="Log In"
-                                    onPress={this.checkCred}
+                                    onPress={this.handleSubmit}
                                 />
                             </View>
                             <View style={styles.button}>
