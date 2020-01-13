@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View, TextInput, Button } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import KeyboardShift from '../components/KeyboardShift';
 import Logo from '../components/Logo';
 
 const credentials = { email: "Emilio@gmail.com", password: "1234" }
@@ -28,47 +29,49 @@ export default class LoginScreen extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <ScrollView >
-                    <Logo />
+            <KeyboardShift>
+                {() => (
                     <View style={styles.container}>
-                        <TextInput style={styles.inputBox}
-                            placeholder="Email"
-                            placeholderTextColor="#fff"
-                            selectionColor="#fff"
-                            keyboardType="email-address"
-                            onChangeText={(email) => { this.setState({ email }) }}
-                            value={this.state.email}
-                            keyboardAppearance='dark'
-                        />
-                        <TextInput style={styles.inputBox}
-                            placeholder="Password"
-                            placeholderTextColor="#fff"
-                            secureTextEntry={true}
-                            onChangeText={(password) => { this.setState({ password }) }}
-                            value={this.state.password}
-                            keyboardAppearance='dark'
-                        />
-                        <View style={styles.buttonsContainer}>
-                            <View style={styles.button}>
-                                <Button
-                                    color="#ffffff"
-                                    title="Log In"
-                                    onPress={this.checkCred}
-                                />
-                            </View>
-                            <View style={styles.button}>
-                                <Button
-                                    color="#ffffff"
-                                    title="Sign Up"
-                                    onPress={this.signup} />
+                        <View style={styles.container}>
+                            <Logo />
+                            <TextInput style={styles.inputBox}
+                                placeholder="Email"
+                                placeholderTextColor="#fff"
+                                selectionColor="#fff"
+                                keyboardType="email-address"
+                                onChangeText={(email) => { this.setState({ email }) }}
+                                value={this.state.email}
+                                keyboardAppearance='dark'
+                            />
+                            <TextInput style={styles.inputBox}
+                                placeholder="Password"
+                                placeholderTextColor="#fff"
+                                secureTextEntry={true}
+                                onChangeText={(password) => { this.setState({ password }) }}
+                                value={this.state.password}
+                                keyboardAppearance='dark'
+                            />
+                            <View style={styles.buttonsContainer}>
+                                <View style={styles.button}>
+                                    <Button
+                                        color="#ffffff"
+                                        title="Log In"
+                                        onPress={this.checkCred}
+                                    />
+                                </View>
+                                <View style={styles.button}>
+                                    <Button
+                                        color="#ffffff"
+                                        title="Sign Up"
+                                        onPress={this.signup} />
+                                </View>
                             </View>
                         </View>
                     </View>
-                </ScrollView>
-            </View>
-        )
-    }
+                )}
+            </KeyboardShift>
+        );
+    };
 };
 
 const styles = StyleSheet.create({
@@ -94,7 +97,7 @@ const styles = StyleSheet.create({
 
     buttonsContainer: {
         justifyContent: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
 
     button: {
