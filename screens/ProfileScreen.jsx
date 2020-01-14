@@ -1,11 +1,12 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, ScrollView, View, TextInput, Button, Text } from 'react-native';
+import { StyleSheet, ScrollView, View, TextInput, Button, Text, KeyboardAvoidingView } from 'react-native';
+import styles from '../constants/Styles';
 
 export default function ProfileScreen() {
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} behavior="padding">
       <Text style={styles.profileText}>[USER'S NAME]</Text>
       <View>
         <TextInput style={styles.inputBox}
@@ -36,51 +37,15 @@ export default function ProfileScreen() {
           keyboardType="email-address"
           keyboardAppearance='dark'
         />
-        <View style={styles.buttonsContainer}>
-          <View style={styles.button}>
-            <Button
-              color="#ffffff"
-              title="Submit"
-            />
-          </View>
+      </View>
+      <View style={styles.buttonsContainer}>
+        <View style={styles.button}>
+          <Button
+            color="#ffffff"
+            title="Submit"
+          />
         </View>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
-
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    backgroundColor: '#17233f',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-
-  profileText: {
-    color: '#fff'
-  },
-
-  inputBox: {
-    width: 300,
-    padding: 5,
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
-    borderRadius: 2,
-    paddingHorizontal: 16,
-    fontSize: 30,
-    color: '#fff',
-    marginVertical: 10,
-  },
-
-  buttonsContainer: {
-    justifyContent: 'center',
-    flexDirection: 'row'
-  },
-
-  button: {
-    backgroundColor: 'black',
-    margin: 10,
-    fontWeight: '500'
-  }
-});
