@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const heroku = 'https://radiant-stream-91922.herokuapp.com/'
+// const heroku = 'https://radiant-stream-91922.herokuapp.com'
 
-// const heroku = 'https://backend-boardwalk.herokuapp.com/'
+const heroku = 'https://backend-boardwalk.herokuapp.com';
 
 export default {
 
@@ -18,15 +18,15 @@ export default {
 signup: function (body) {
   return axios({
     method: 'post',
-    headers: { 'content-type': 'application/json' },
+    // headers: { 'content-type': 'application/json' },
     url: heroku + "/api/users", 
-    data:body
+    data:body // grabing the object body from api
   });
 },
 login: function (body) {
   return axios({
     method: 'post',
-    headers:{ 'content-type': 'application/json' },
+    // headers:{ 'content-type': 'application/json' },
     url: heroku + "/auth/login",
     data: body
   });

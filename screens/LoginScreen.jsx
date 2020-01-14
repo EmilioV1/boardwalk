@@ -4,8 +4,6 @@ import { Actions } from 'react-native-router-flux';
 import Logo from '../components/Logo';
 import API from '../utils/API';
 
-// const credentials = { email: "Emilio@gmail.com", password: "1234" }
-
 export default class LoginScreen extends Component {
     state = {
         email: "",
@@ -21,11 +19,13 @@ export default class LoginScreen extends Component {
         event.preventDefault();
 
         const { email, password } = this.state; //grab the current state for email and password
-
-        API.login(email, password)
+        console.log(email); // console.log to see if catch the input email and password
+        console.log(password);
+        API.login({email:email,password:password}) // grab the object's email and password
             .then(result => {
                 this.setState({ error: "" });
-                this.props.onSuccess(result.data);
+                console.log(result.data);
+                this.props.handleAuth(result.data);// match to app.jsx handleAuth
             })
             .catch(err => {
                 console.log(err);
