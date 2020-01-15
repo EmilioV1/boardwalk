@@ -11,7 +11,7 @@ export default class SignUpScreen extends Component {
             <KeyboardAvoidingView
                 style={styles.container}
                 behavior="padding">
-                <Logo height={150} width={150} radius={25} />
+                <Logo height={140} width={140} radius={25} />
                 <View>
                     <TextInput style={styles.inputBox}
                         placeholder="First"
@@ -49,7 +49,7 @@ export default class SignUpScreen extends Component {
                         </View>
                     </View>
                 </View>
-                <View style = {{height: 40}} />
+                <View style = {{height: 60}} />
             </KeyboardAvoidingView>
         );
     };

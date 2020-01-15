@@ -97,17 +97,17 @@ const homeStyle = StyleSheet.create({
     padding: 5,
     borderRadius: 2,
     marginVertical: 10,
-    shadowOffset: { width: 10, height: 10, },
+    shadowOffset: { width: 3, height: 1.5, },
     shadowColor: 'white',
-    shadowOpacity: 1.0,
+    shadowOpacity: 0.25,
   },
   logOutButton: {
     backgroundColor: 'red',
     margin: 5,
     width: 100,
     padding: 5,
-    shadowOffset: { width: 4, height: 2, },
+    shadowOffset: { width: 3, height: 1.5, },
     shadowColor: 'white',
-    shadowOpacity: 0.5,
+    shadowOpacity: 0.25,
   }
 });

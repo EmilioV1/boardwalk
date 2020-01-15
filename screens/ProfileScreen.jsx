@@ -1,13 +1,14 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, ScrollView, View, TextInput, Button, Text, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, View, TextInput, Button, Text, KeyboardAvoidingView } from 'react-native';
 import styles from '../constants/Styles';
+import UserImage from '../components/UserImage';
 
 export default function ProfileScreen() {
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <Text style={styles.profileText}>[USER'S NAME]</Text>
+      <UserImage />
       <View>
         <TextInput style={styles.inputBox}
           placeholder="Annual Income"
@@ -39,7 +40,7 @@ export default function ProfileScreen() {
         />
       </View>
       <View style={styles.buttonsContainer}>
-        <View style={styles.button}>
+        <View style={profileStyle.button}>
           <Button
             color="#ffffff"
             title="Submit"
@@ -49,3 +50,30 @@ export default function ProfileScreen() {
     </KeyboardAvoidingView>
   );
 };
+
+const profileStyle = StyleSheet.create({
+  buttonsContainer: {
+    justifyContent: 'center',
+    flexDirection: 'column'
+  },
+  button: {
+    backgroundColor: 'black',
+    margin: 10,
+    width: 300,
+    padding: 5,
+    borderRadius: 2,
+    marginVertical: 10,
+    shadowOffset: { width: 3, height: 1.5, },
+    shadowColor: 'white',
+    shadowOpacity: 0.25,
+  },
+  logOutButton: {
+    backgroundColor: 'red',
+    margin: 5,
+    width: 100,
+    padding: 5,
+    shadowOffset: { width: 3, height: 1.5, },
+    shadowColor: 'white',
+    shadowOpacity: 0.25,
+  }
+});
