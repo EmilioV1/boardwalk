@@ -6,6 +6,11 @@ import Logo from '../components/Logo';
 
 export default class SignUpScreen extends Component {
 
+    handleSubmit = event => {
+        event.preventDefault();
+
+        
+    }
     render() {
         return (
             <KeyboardAvoidingView
