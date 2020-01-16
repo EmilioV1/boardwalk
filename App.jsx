@@ -15,7 +15,7 @@ export default class App extends Component {
   };
 
   handleAuth = () => {
-    this.setState({ loggedIn: true });
+    this.setState({ loggedIn: !this.state.loggedIn });
   };
 
   render() {
@@ -24,7 +24,7 @@ export default class App extends Component {
       <Router>
         {this.state.loggedIn ?
           <Stack key="root">
-            <Scene key="home" component={Home} title="Home" />
+            <Scene key="home" component={() => <Home handleAuth={this.handleAuth}/>} title="Home" />
             <Scene key="profile" component={Profile} title="Profile" />
             <Scene key="newDebt" component={NewDebt} title="New Debt" />
             <Scene key="oldDebt" component={OldDebt} title="Old Debt" />
