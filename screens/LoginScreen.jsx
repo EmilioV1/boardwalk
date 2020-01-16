@@ -25,7 +25,7 @@ export default class LoginScreen extends Component {
         } else {
             alert("Email or password is wrong!");
         }
-    }
+    };
 
     render() {
         return (
