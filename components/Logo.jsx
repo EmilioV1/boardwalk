@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Image, Text } from 'react-native';
 
 export default class Logo extends Component {
+    constructor(props){
+        super(props);
+    }
     render() {
 
         return (
-            <View style={styles.container}>
+            <View style = {styles.container}>
                 <Image
-                    style={{ width: 250, height: 250, borderRadius: 50 }}
+                    style={{ width: this.props.width, height: this.props.height, borderRadius: this.props.radius }}
                     source={require('../assets/images/LogoWhiteBackground.png')}
                 />
                 <Text style={styles.logoText}>Welcome to Boardwalk</Text>
@@ -20,13 +23,11 @@ export default class Logo extends Component {
 const styles = StyleSheet.create({
 
     container: {
-        flexGrow: 1,
-        justifyContent: 'center',
         alignItems: 'center',
     },
 
     logoText: {
-        marginVertical: 40,
+        padding: 10,
         fontSize: 20,
         color: '#fff',
     }

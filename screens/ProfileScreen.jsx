@@ -1,12 +1,14 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, ScrollView, View, TextInput, Button, Text } from 'react-native';
+import { StyleSheet, View, TextInput, Button, Text, KeyboardAvoidingView } from 'react-native';
+import styles from '../constants/Styles';
+import UserImage from '../components/UserImage';
 
 export default function ProfileScreen() {
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.profileText}>[USER'S NAME]</Text>
+    <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <UserImage />
       <View>
         <TextInput style={styles.inputBox}
           placeholder="Annual Income"
@@ -36,51 +38,42 @@ export default function ProfileScreen() {
           keyboardType="email-address"
           keyboardAppearance='dark'
         />
-        <View style={styles.buttonsContainer}>
-          <View style={styles.button}>
-            <Button
-              color="#ffffff"
-              title="Submit"
-            />
-          </View>
+      </View>
+      <View style={styles.buttonsContainer}>
+        <View style={profileStyle.button}>
+          <Button
+            color="#ffffff"
+            title="Submit"
+          />
         </View>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    backgroundColor: '#17233f',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-
-  profileText: {
-    color: '#fff'
-  },
-
-  inputBox: {
-    width: 300,
-    padding: 5,
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
-    borderRadius: 2,
-    paddingHorizontal: 16,
-    fontSize: 30,
-    color: '#fff',
-    marginVertical: 10,
-  },
-
+const profileStyle = StyleSheet.create({
   buttonsContainer: {
     justifyContent: 'center',
-    flexDirection: 'row'
+    flexDirection: 'column'
   },
-
   button: {
     backgroundColor: 'black',
     margin: 10,
-    fontWeight: '500'
+    width: 300,
+    padding: 5,
+    borderRadius: 2,
+    marginVertical: 10,
+    shadowOffset: { width: 3, height: 1.5, },
+    shadowColor: 'white',
+    shadowOpacity: 0.25,
+  },
+  logOutButton: {
+    backgroundColor: 'red',
+    margin: 5,
+    width: 100,
+    padding: 5,
+    shadowOffset: { width: 3, height: 1.5, },
+    shadowColor: 'white',
+    shadowOpacity: 0.25,
   }
 });
