@@ -99,7 +99,7 @@ const homeStyle = StyleSheet.create({
     marginVertical: 10,
     shadowOffset: { width: 3, height: 1.5, },
     shadowColor: 'white',
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.5,
   },
   logOutButton: {
     backgroundColor: 'red',
@@ -108,6 +108,6 @@ const homeStyle = StyleSheet.create({
     padding: 5,
     shadowOffset: { width: 3, height: 1.5, },
     shadowColor: 'white',
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.5,
   }
 });
