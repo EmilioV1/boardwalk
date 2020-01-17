@@ -5,11 +5,17 @@ import styles from '../constants/Styles'
 import Logo from '../components/Logo';
 
 export default class SignUpScreen extends Component {
-
+    state = {
+        firstName:"",
+        lastName:"",
+        email:"",
+        password:""
+    };
+    
     handleSubmit = event => {
         event.preventDefault();
 
-        
+
     }
     render() {
         return (
@@ -23,6 +29,8 @@ export default class SignUpScreen extends Component {
                         placeholderTextColor="#fff"
                         selectionColor="#fff"
                         keyboardType="email-address"
+                        onChangeText={(email) => { this.setState({ email }) }}
+                        value={this.state.email}
                         keyboardAppearance='dark'
                     />
                     <TextInput style={styles.inputBox}
@@ -30,6 +38,8 @@ export default class SignUpScreen extends Component {
                         placeholderTextColor="#fff"
                         selectionColor="#fff"
                         keyboardType="email-address"
+                        onChangeText={(email) => { this.setState({ email }) }}
+                        value={this.state.email}
                         keyboardAppearance='dark'
                     />
                     <TextInput style={styles.inputBox}
@@ -37,6 +47,8 @@ export default class SignUpScreen extends Component {
                         placeholderTextColor="#fff"
                         selectionColor="#fff"
                         keyboardType="email-address"
+                        onChangeText={(email) => { this.setState({ email }) }}
+                        value={this.state.email}
                         keyboardAppearance='dark'
                     />
                     <TextInput style={styles.inputBox}
