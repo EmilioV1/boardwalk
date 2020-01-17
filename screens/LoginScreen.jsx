@@ -40,7 +40,7 @@ export default class LoginScreen extends Component {
             behavior="padding"
             >
                 <Logo height = {200} width = {200} radius = {30}/>
-                <View>
+             <View>
                     <TextInput style={styles.inputBox}
                         placeholder="Email"
                         placeholderTextColor="#fff"
