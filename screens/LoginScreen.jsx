@@ -29,10 +29,10 @@ export default class LoginScreen extends Component {
 
     render() {
         return (
-            <KeyboardAvoidingView style={styles.container} 
-            behavior="padding"
+            <KeyboardAvoidingView style={styles.container}
+                behavior="padding"
             >
-                <Logo height = {200} width = {200} radius = {30}/>
+                <Logo height={200} width={200} radius={30} />
                 <View>
                     <TextInput style={styles.inputBox}
                         placeholder="Email"
@@ -51,24 +51,24 @@ export default class LoginScreen extends Component {
                         value={this.state.password}
                         keyboardAppearance='dark'
                     />
-                
-                <View style={styles.buttonsContainer}>
-                    <View style={styles.button}>
-                        <Button
-                            color="#ffffff"
-                            title="Log In"
-                            onPress={this.checkCred}
-                        />
-                    </View>
-                    <View style={styles.button}>
-                        <Button
-                            color="#ffffff"
-                            title="Sign Up"
-                            onPress={this.signup} />
+
+                    <View style={styles.buttonsContainer}>
+                        <View style={styles.button}>
+                            <Button
+                                color="#ffffff"
+                                title="Log In"
+                                onPress={this.checkCred}
+                            />
+                        </View>
+                        <View style={styles.button}>
+                            <Button
+                                color="#ffffff"
+                                title="Sign Up"
+                                onPress={this.signup} />
+                        </View>
                     </View>
                 </View>
-                </View>
-            <View style = {{height:40}}></View>
+                <View style={{ height: 40 }}></View>
             </ KeyboardAvoidingView>
         );
     };

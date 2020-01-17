@@ -8,45 +8,48 @@ export default function ProfileScreen() {
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <UserImage />
       <View>
-        <TextInput style={styles.inputBox}
-          placeholder="Annual Income"
-          placeholderTextColor="#fff"
-          selectionColor="#fff"
-          keyboardType="email-address"
-          keyboardAppearance='dark'
-        />
-        <TextInput style={styles.inputBox}
-          placeholder="Savings"
-          placeholderTextColor="#fff"
-          selectionColor="#fff"
-          keyboardType="email-address"
-          keyboardAppearance='dark'
-        />
-        <TextInput style={styles.inputBox}
-          placeholder="Debt"
-          placeholderTextColor="#fff"
-          selectionColor="#fff"
-          keyboardType="email-address"
-          keyboardAppearance='dark'
-        />
-        <TextInput style={styles.inputBox}
-          placeholder="Report"
-          placeholderTextColor="#fff"
-          selectionColor="#fff"
-          keyboardType="email-address"
-          keyboardAppearance='dark'
-        />
-      </View>
-      <View style={styles.buttonsContainer}>
-        <View style={profileStyle.button}>
-          <Button
-            color="#ffffff"
-            title="Submit"
+        <View>
+          <UserImage />
+          <TextInput style={styles.inputBox}
+            placeholder="Annual Income"
+            placeholderTextColor="#fff"
+            selectionColor="#fff"
+            keyboardType="email-address"
+            keyboardAppearance='dark'
+          />
+          <TextInput style={styles.inputBox}
+            placeholder="Savings"
+            placeholderTextColor="#fff"
+            selectionColor="#fff"
+            keyboardType="email-address"
+            keyboardAppearance='dark'
+          />
+          <TextInput style={styles.inputBox}
+            placeholder="Debt"
+            placeholderTextColor="#fff"
+            selectionColor="#fff"
+            keyboardType="email-address"
+            keyboardAppearance='dark'
+          />
+          <TextInput style={styles.inputBox}
+            placeholder="Report"
+            placeholderTextColor="#fff"
+            selectionColor="#fff"
+            keyboardType="email-address"
+            keyboardAppearance='dark'
           />
         </View>
+        <View style={styles.buttonsContainer}>
+          <View style={profileStyle.button}>
+            <Button
+              color="#ffffff"
+              title="Submit"
+            />
+          </View>
+        </View>
       </View>
+      <View style={{ height: 90 }} />
     </KeyboardAvoidingView>
   );
 };
@@ -58,11 +61,10 @@ const profileStyle = StyleSheet.create({
   },
   button: {
     backgroundColor: 'black',
-    margin: 10,
     width: 300,
     padding: 5,
     borderRadius: 2,
-    marginVertical: 10,
+    marginVertical: 25,
     shadowOffset: { width: 3, height: 1.5, },
     shadowColor: 'white',
     shadowOpacity: 0.25,

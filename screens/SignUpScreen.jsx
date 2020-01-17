@@ -49,7 +49,7 @@ export default class SignUpScreen extends Component {
                         </View>
                     </View>
                 </View>
-                <View style = {{height: 60}} />
+                <View style={{ height: 60 }} />
             </KeyboardAvoidingView>
         );
     };

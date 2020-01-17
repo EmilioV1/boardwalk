@@ -29,14 +29,17 @@ export default function HomeScreen(props) {
           onPress: () => alert('Yay Staying'),
           style: 'cancel',
         },
-        { text: 'OK', onPress: () => {alert('Logged Out','')
-        setTimeout(() => props.handleAuth(), 2000);
-        
-      } },
+        {
+          text: 'OK', onPress: () => {
+            alert('Logged Out', '')
+            setTimeout(() => props.handleAuth(), 2000);
+
+          }
+        },
       ],
       { cancelable: false },
     );
-   
+
   }
 
   return (
