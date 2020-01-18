@@ -1,28 +1,69 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, ScrollView, View, TextInput, Button, Text } from 'react-native';
+import { StyleSheet, View, TextInput, Button, Text, KeyboardAvoidingView, ImageBackground } from 'react-native';
+import styles from '../constants/Styles';
 
 export default function OldDebt() {
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.oldDebtText}>Hello, I am the old debt screen!</Text>
-    </View>
+    <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
+    <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <View>
+        <Text style={styles.oldDebt}>
+        Old Debt
+        </Text>
+        <TextInput style={styles.inputBox}
+          placeholder="Debt Amount"
+          placeholderTextColor="#fff"
+          selectionColor="#fff"
+          keyboardType="email-address"
+          keyboardAppearance='dark'
+        />
+        <TextInput style={styles.inputBox}
+          placeholder="Monthly Payment Amount"
+          placeholderTextColor="#fff"
+          selectionColor="#fff"
+          keyboardType="email-address"
+          keyboardAppearance='dark'
+        />
+        <TextInput style={styles.inputBox}
+          placeholder="Interest Rate"
+          placeholderTextColor="#fff"
+          selectionColor="#fff"
+          keyboardType="email-address"
+          keyboardAppearance='dark'
+        />
+      </View>
+      <View style={styles.buttonsContainer}>
+        <View style={profileStyle.button}>
+          <Button
+            color="#ffffff"
+            title="Submit"
+          />
+        </View>
+      </View>
+    </KeyboardAvoidingView>
+    </ImageBackground>
   );
-
 };
 
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    backgroundColor: '#17233f',
-    alignItems: 'center',
-    justifyContent: 'center'
+const profileStyle = StyleSheet.create({
+  buttonsContainer: {
+    justifyContent: 'center',
+    flexDirection: 'column'
   },
-
-  oldDebtText: {
-    color: '#fff'
+  button: {
+    backgroundColor: '#463547',
+    margin: 10,
+    width: 300,
+    padding: 5,
+    borderRadius: 30,
+    marginVertical: 10,
+  },
+  logOutButton: {
+    backgroundColor: '#463547',
+    margin: 5,
+    width: 100,
+    padding: 5,
   }
-
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import { View, Button, Text, StyleSheet, Alert } from 'react-native';
+import { View, Button, Text, StyleSheet, Alert, ImageBackground } from 'react-native';
 import styles from '../constants/Styles';
 import LogoHome from '../components/LogoHome';
 
@@ -40,6 +40,7 @@ export default function HomeScreen(props) {
   }
 
   return (
+    <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
     <View style={styles.container}>
       <LogoHome height={200} width={200} radius={20} />
 
@@ -83,6 +84,7 @@ export default function HomeScreen(props) {
 
       <View style={{ height: 40 }} />
     </View>
+    </ImageBackground>
   );
 };
 

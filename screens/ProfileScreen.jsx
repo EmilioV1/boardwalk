@@ -1,12 +1,13 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, View, TextInput, Button, Text, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, View, TextInput, Button, Text, KeyboardAvoidingView, ImageBackground } from 'react-native';
 import styles from '../constants/Styles';
 import UserImage from '../components/UserImage';
 
 export default function ProfileScreen() {
 
   return (
+    <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <UserImage />
       <View>
@@ -48,6 +49,7 @@ export default function ProfileScreen() {
         </View>
       </View>
     </KeyboardAvoidingView>
+    </ImageBackground>
   );
 };
 
@@ -61,7 +63,7 @@ const profileStyle = StyleSheet.create({
     margin: 10,
     width: 300,
     padding: 5,
-    borderRadius: 2,
+    borderRadius: 30,
     marginVertical: 10,
   },
   logOutButton: {

@@ -37,9 +37,10 @@ export default class LoginScreen extends Component {
 
                     <View style={styles.button}>
                         <Button
-                            color="#ffffff"
+                            color="pink"
                             title="Sign Up"
-                            onPress={this.signup} />
+                            onPress={this.signup} 
+                            />
                     </View>
                 </View>
 
