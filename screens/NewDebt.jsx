@@ -1,28 +1,86 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, KeyboardAvoidingView, Button, TextInput, Text } from 'react-native';
+import styles from '../constants/Styles';
 
-export default function NewDebt() {
+export default class SignUpScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loanAmount: "",
+      downPayment: "",
+      loanTerm: "",
+      interestRate: ""
+    };
+  };
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.newDebtText}>Hello, I am the new debt screen!</Text>
-    </View>
-  );
-
+  render() {
+    return (
+      <KeyboardAvoidingView style={styles.container}
+        behavior="padding"
+      >
+        <View>
+          <View style={newStyle.textContainer}>
+            <Text style={newStyle.text}>Total</Text>
+          </View>
+          <View style={{ height: 80 }}></View>
+          <TextInput style={styles.inputBox}
+            placeholder="Loan Amount"
+            placeholderTextColor="#fff"
+            selectionColor="#fff"
+            keyboardType="email-address"
+            onChangeText={(loanAmount) => { this.setState({ loanAmount }) }}
+            value={this.state.loanAmount}
+            keyboardAppearance='dark'
+          />
+          <TextInput style={styles.inputBox}
+            placeholder=" Down Payment"
+            placeholderTextColor="#fff"
+            secureTextEntry={true}
+            onChangeText={(downPayment) => { this.setState({ downPayment }) }}
+            value={this.state.downPayment}
+            keyboardAppearance='dark'
+          />
+          <TextInput style={styles.inputBox}
+            placeholder="Loan Term In Years"
+            placeholderTextColor="#fff"
+            selectionColor="#fff"
+            keyboardType="email-address"
+            onChangeText={(loanTerm) => { this.setState({ loanTerm }) }}
+            value={this.state.loanTerm}
+            keyboardAppearance='dark'
+          />
+          <TextInput style={styles.inputBox}
+            placeholder="Interest Rate"
+            placeholderTextColor="#fff"
+            secureTextEntry={true}
+            onChangeText={(interestRate) => { this.setState({ interestRate }) }}
+            value={this.state.interestRate}
+            keyboardAppearance='dark'
+          />
+          <View style={styles.buttonsContainer}>
+            <View style={styles.button}>
+              <Button
+                color="#ffffff"
+                title="Submit"
+              />
+            </View>
+          </View>
+          <View style={{ height: 40 }}></View>
+        </View>
+      </ KeyboardAvoidingView>
+    );
+  };
 };
 
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    backgroundColor: '#17233f',
-    alignItems: 'center',
-    justifyContent: 'center',
+const newStyle = StyleSheet.create({
+  text: {
+    color: 'white',
+    fontSize: 50
   },
 
-  newDebtText: {
-    color: '#fff'
+  textContainer: {
+    alignItems: 'center',
+    backgroundColor: 'rgba(135, 38, 255, 0.3)',
   }
-
 });

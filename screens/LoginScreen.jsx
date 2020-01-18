@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { View, TextInput, Button, KeyboardAvoidingView } from 'react-native';
-import styles from '../constants/Styles'
+import styles from '../constants/Styles';
 import { Actions } from 'react-native-router-flux';
 import Logo from '../components/Logo';
+import API from '../utils/API';
 
 const credentials = { email: "Emilio@gmail.com", password: "1234" }
 
