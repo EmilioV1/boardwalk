@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, TextInput, Button, KeyboardAvoidingView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import styles from '../constants/Styles'
-import Logo from '../components/Logo';
+import LogoHome from '../components/LogoHome';
 import API from '../utils/API';
 
 export default class SignUpScreen extends Component {
@@ -45,7 +45,7 @@ export default class SignUpScreen extends Component {
             <KeyboardAvoidingView
                 style={styles.container}
                 behavior="padding">
-                <Logo height={140} width={140} radius={25} />
+                <LogoHome height={140} width={140} radius={25} />
                 <View>
                     <TextInput style={styles.inputBox}
                         placeholder="First"

@@ -68,14 +68,13 @@ const profileStyle = StyleSheet.create({
     shadowOffset: { width: 3, height: 1.5, },
     shadowColor: 'white',
     shadowOpacity: 0.25,
+    backgroundColor: '#463547',
+    margin: 10,
   },
   logOutButton: {
-    backgroundColor: 'red',
+    backgroundColor: '#463547',
     margin: 5,
     width: 100,
     padding: 5,
-    shadowOffset: { width: 3, height: 1.5, },
-    shadowColor: 'white',
-    shadowOpacity: 0.25,
   }
 });
