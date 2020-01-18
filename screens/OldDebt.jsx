@@ -9,9 +9,9 @@ export default function OldDebt() {
     <ImageBackground source={require('../assets/images/background.png')} style={styles.backgroundImage}>
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <View>
-        <Text style={styles.oldDebt}>
-        Old Debt
-        </Text>
+      <View style={newStyle.textContainer}>
+            <Text style={newStyle.text}>Total</Text>
+          </View>
         <TextInput style={styles.inputBox}
           placeholder="Debt Amount"
           placeholderTextColor="#fff"
@@ -65,5 +65,19 @@ const profileStyle = StyleSheet.create({
     margin: 5,
     width: 100,
     padding: 5,
+  }
+});
+
+const newStyle = StyleSheet.create({
+  text: {
+    color: 'white',
+    fontSize: 50,
+    opacity: 1
+  },
+
+  textContainer: {
+    alignItems: 'center',
+    backgroundColor: '#463547',
+    opacity: 0.6
   }
 });
