@@ -2,7 +2,7 @@ import React from 'react';
 import { Actions } from 'react-native-router-flux';
 import { View, Button, Text, StyleSheet, Alert } from 'react-native';
 import styles from '../constants/Styles';
-import Logo from '../components/Logo';
+import LogoHome from '../components/LogoHome';
 
 export default function HomeScreen(props) {
 
@@ -41,7 +41,7 @@ export default function HomeScreen(props) {
 
   return (
     <View style={styles.container}>
-      <Logo height={100} width={100} radius={20} />
+      <LogoHome height={200} width={200} radius={20} />
 
       <View>
         <View style={homeStyle.buttonsContainer}>
@@ -73,9 +73,10 @@ export default function HomeScreen(props) {
       </View>
       <View style={homeStyle.logOutButton}>
         <Button
-          color='#fff'
+          color='black'
           onPress={logOut}
           title="Log Out"
+          
         >
         </Button>
       </View>
@@ -91,23 +92,20 @@ const homeStyle = StyleSheet.create({
     flexDirection: 'column'
   },
   button: {
-    backgroundColor: 'black',
+    backgroundColor: '#463547',
     margin: 10,
     width: 300,
     padding: 5,
     borderRadius: 2,
     marginVertical: 10,
-    shadowOffset: { width: 3, height: 1.5, },
-    shadowColor: 'white',
-    shadowOpacity: 0.25,
+    borderRadius: 30,
+    fontWeight: 'bold'
   },
   logOutButton: {
-    backgroundColor: 'red',
+    backgroundColor: 'white',
     margin: 5,
     width: 100,
     padding: 5,
-    shadowOffset: { width: 3, height: 1.5, },
-    shadowColor: 'white',
-    shadowOpacity: 0.25,
+    borderRadius: 30
   }
 });
