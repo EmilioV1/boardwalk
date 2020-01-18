@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, Button, KeyboardAvoidingView } from 'react-native';
+import { View, TextInput, Button, KeyboardAvoidingView, ImageBackground, Image } from 'react-native';
 import styles from '../constants/Styles'
 import { Actions } from 'react-native-router-flux';
 import Logo from '../components/Logo';
@@ -36,6 +36,8 @@ export default class LoginScreen extends Component {
 
     render() {
         return (
+
+            <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
             <KeyboardAvoidingView style={styles.container} 
             behavior="padding"
             >
@@ -58,24 +60,27 @@ export default class LoginScreen extends Component {
                             value={this.state.password}
                             keyboardAppearance='dark'
                         />
-                        <View style={styles.buttonsContainer}>
-                            <View style={styles.button}>
-                                <Button
-                                    color="#ffffff"
-                                    title="Log In"
-                                    onPress={this.handleSubmit}
-                                />
-                          </View>
-                          <View style={styles.button}>
-                                <Button
-                                    color="#ffffff"
-                                    title="Sign Up"
-                                    onPress={this.signup} />
-                            </View>
-                        </View>
+                    <View style={styles.buttonsContainer}>
+                    <View style={styles.button}>
+                        <Button
+                            color="#ffffff"
+                            title="Log In"
+                            onPress={this.checkCred}
+                        />
+                    </View>
+                    <View style={styles.button}>
+                        <Button
+                            color="white"
+                            title="Sign Up"
+                            onPress={this.signup} 
+                            />
+                    </View>
+                </View>
                 </View>
             <View style = {{height:40}}></View>
             </ KeyboardAvoidingView>
+            </ImageBackground>
+    
         );
     };
 };
