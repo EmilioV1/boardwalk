@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, Button, KeyboardAvoidingView } from 'react-native';
+import { View, TextInput, Button, KeyboardAvoidingView, ImageBackground } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import styles from '../constants/Styles'
 import LogoHome from '../components/LogoHome';
@@ -42,6 +42,7 @@ export default class SignUpScreen extends Component {
 
     render() {
         return (
+            <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
             <KeyboardAvoidingView
                 style={styles.container}
                 behavior="padding">
@@ -94,6 +95,7 @@ export default class SignUpScreen extends Component {
                 </View>
                 <View style={{ height: 60 }} />
             </KeyboardAvoidingView>
+            </ImageBackground>
         );
     };
 };
