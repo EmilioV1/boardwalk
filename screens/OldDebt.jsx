@@ -80,6 +80,6 @@ const newStyle = StyleSheet.create({
   textContainer: {
     alignItems: 'center',
     backgroundColor: 'rgba(70, 53, 71, 0.65)',
-    borderRadius: 30,    
+    borderRadius: 30,
   }
 });

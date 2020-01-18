@@ -44,48 +44,46 @@ export default function HomeScreen(props) {
 
   return (
     <ImageBackground source={require('../assets/images/background.png')} style={styles.backgroundImage}>
-    <View style={styles.container}>
-      <LogoHome height={200} width={200} radius={20} />
-
-      <View>
-        <View style={homeStyle.buttonsContainer}>
-          <View style={homeStyle.button}>
-            <Button
-              onPress={profile}
-              title="Profile"
-              color='#fff'
-            >
-            </Button>
-          </View>
-          <View style={homeStyle.button}>
-            <Button
-              onPress={newDebt}
-              title="New Debt"
-              color='#fff'
-            >
-            </Button>
-          </View>
-          <View style={homeStyle.button}>
-            <Button
-              color='#fff'
-              onPress={oldDebt}
-              title="Old Debt"
-            >
-            </Button>
+      <View style={styles.container}>
+        <LogoHome height={200} width={200} radius={20} />
+        <View>
+          <View style={homeStyle.buttonsContainer}>
+            <View style={homeStyle.button}>
+              <Button
+                onPress={profile}
+                title="Profile"
+                color='#fff'
+              >
+              </Button>
+            </View>
+            <View style={homeStyle.button}>
+              <Button
+                onPress={newDebt}
+                title="New Debt"
+                color='#fff'
+              >
+              </Button>
+            </View>
+            <View style={homeStyle.button}>
+              <Button
+                color='#fff'
+                onPress={oldDebt}
+                title="Old Debt"
+              >
+              </Button>
+            </View>
           </View>
         </View>
+        <View style={homeStyle.logOutButton}>
+          <Button
+            color='black'
+            onPress={logOut}
+            title="Log Out"
+          >
+          </Button>
+        </View>
+        <View style={{ height: 40 }} />
       </View>
-      <View style={homeStyle.logOutButton}>
-        <Button
-          color='black'
-          onPress={logOut}
-          title="Log Out"
-        >
-        </Button>
-      </View>
-
-      <View style={{ height: 40 }} />
-    </View>
     </ImageBackground>
   );
 };

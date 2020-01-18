@@ -33,14 +33,8 @@ export default function ProfileScreen() {
               keyboardType="email-address"
               keyboardAppearance='dark'
             />
-            <TextInput style={styles.inputBox}
-              placeholder="Report"
-              placeholderTextColor="#fff"
-              selectionColor="#fff"
-              keyboardType="email-address"
-              keyboardAppearance='dark'
-            />
           </View>
+          <View style={{ height: 60 }} />
           <View style={styles.buttonsContainer}>
             <View style={profileStyle.button}>
               <Button
@@ -49,8 +43,8 @@ export default function ProfileScreen() {
               />
             </View>
           </View>
+          <View style={{ height: 90 }} />
         </View>
-        <View style={{ height: 90 }} />
       </KeyboardAvoidingView>
     </ImageBackground>
   );
@@ -63,7 +57,7 @@ const profileStyle = StyleSheet.create({
   },
   button: {
     backgroundColor: '#463547',
-    width: 300,
+    width: 200,
     padding: 5,
     borderRadius: 30,
     marginVertical: 10,

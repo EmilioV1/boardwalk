@@ -71,7 +71,6 @@ export default class LoginScreen extends Component {
                             </View>
                         </View>
                     </View>
-                    
                     <View style={{ height: 40 }}></View>
                 </KeyboardAvoidingView >
             </ImageBackground >

@@ -21,7 +21,7 @@ export default class App extends Component {
   render() {
 
     return (
-      <Router navigationBarStyle={{ backgroundColor: "#485982", borderBottom: '1px solid black' }} titleStyle={{ color: '#fff' }} >
+      <Router navigationBarStyle={{ backgroundColor: "#3b2c3b"}} titleStyle={{ color: '#fff' }} >
         {this.state.loggedIn ?
           <Stack key="root">
             <Scene key="home" component={() => <Home handleAuth={this.handleAuth} />} title="Home" />

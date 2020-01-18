@@ -38,13 +38,4 @@ export default {
         flex: 1,
         resizeMode: 'cover'
     },
-
-    oldDebt: {
-        fontSize: 70,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        color: '#463547',
-        paddingBottom: 50,
-        paddingTop: 0,
-    }
 };
