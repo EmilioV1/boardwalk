@@ -53,7 +53,7 @@ export default function HomeScreen(props) {
             <Button
               onPress={profile}
               title="Profile"
-              color='black'
+              color='#fff'
             >
             </Button>
           </View>
@@ -103,9 +103,6 @@ const homeStyle = StyleSheet.create({
     padding: 5,
     borderRadius: 2,
     marginVertical: 10,
-    shadowOffset: { width: 3, height: 1.5, },
-    shadowColor: 'white',
-    shadowOpacity: 0.5,
     borderRadius: 30,
     fontWeight: 'bold'
   },
@@ -114,9 +111,6 @@ const homeStyle = StyleSheet.create({
     margin: 5,
     width: 100,
     padding: 5,
-    shadowOffset: { width: 3, height: 1.5, },
-    shadowColor: 'white',
-    shadowOpacity: 0.5,
     borderRadius: 30
   }
 });

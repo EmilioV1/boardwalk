@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, View, KeyboardAvoidingView, Button, TextInput, Text } from 'react-native';
+import { StyleSheet, View, KeyboardAvoidingView, Button, TextInput, Text, ImageBackground } from 'react-native';
 import styles from '../constants/Styles';
 
 export default class SignUpScreen extends Component {
@@ -16,6 +16,7 @@ export default class SignUpScreen extends Component {
 
   render() {
     return (
+      <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
       <KeyboardAvoidingView style={styles.container}
         behavior="padding"
       >
@@ -69,6 +70,7 @@ export default class SignUpScreen extends Component {
           <View style={{ height: 40 }}></View>
         </View>
       </ KeyboardAvoidingView>
+      </ImageBackground>
     );
   };
 };

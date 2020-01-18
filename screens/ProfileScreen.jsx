@@ -62,7 +62,7 @@ const profileStyle = StyleSheet.create({
     flexDirection: 'column'
   },
   button: {
-    backgroundColor: 'black',
+    backgroundColor: '#463547',
     width: 300,
     padding: 5,
     borderRadius: 30,
