@@ -80,7 +80,6 @@ export default function HomeScreen(props) {
           color='black'
           onPress={logOut}
           title="Log Out"
-
         >
         </Button>
       </View>
@@ -94,7 +93,7 @@ export default function HomeScreen(props) {
 const homeStyle = StyleSheet.create({
   buttonsContainer: {
     justifyContent: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   button: {
     backgroundColor: '#463547',
@@ -104,7 +103,7 @@ const homeStyle = StyleSheet.create({
     borderRadius: 2,
     marginVertical: 10,
     borderRadius: 30,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   logOutButton: {
     backgroundColor: 'white',

@@ -7,42 +7,43 @@ export default function OldDebt() {
 
   return (
     <ImageBackground source={require('../assets/images/background.png')} style={styles.backgroundImage}>
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <View>
-      <View style={newStyle.textContainer}>
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <View>
+          <View style={newStyle.textContainer}>
             <Text style={newStyle.text}>Total</Text>
           </View>
-        <TextInput style={styles.inputBox}
-          placeholder="Debt Amount"
-          placeholderTextColor="#fff"
-          selectionColor="#fff"
-          keyboardType="email-address"
-          keyboardAppearance='dark'
-        />
-        <TextInput style={styles.inputBox}
-          placeholder="Monthly Payment Amount"
-          placeholderTextColor="#fff"
-          selectionColor="#fff"
-          keyboardType="email-address"
-          keyboardAppearance='dark'
-        />
-        <TextInput style={styles.inputBox}
-          placeholder="Interest Rate"
-          placeholderTextColor="#fff"
-          selectionColor="#fff"
-          keyboardType="email-address"
-          keyboardAppearance='dark'
-        />
-      </View>
-      <View style={styles.buttonsContainer}>
-        <View style={profileStyle.button}>
-          <Button
-            color="#ffffff"
-            title="Submit"
+          <View style={{ height: 80 }}></View>
+          <TextInput style={styles.inputBox}
+            placeholder="Debt Amount"
+            placeholderTextColor="#fff"
+            selectionColor="#fff"
+            keyboardType="email-address"
+            keyboardAppearance='dark'
+          />
+          <TextInput style={styles.inputBox}
+            placeholder="Monthly Payment Amount"
+            placeholderTextColor="#fff"
+            selectionColor="#fff"
+            keyboardType="email-address"
+            keyboardAppearance='dark'
+          />
+          <TextInput style={styles.inputBox}
+            placeholder="Interest Rate"
+            placeholderTextColor="#fff"
+            selectionColor="#fff"
+            keyboardType="email-address"
+            keyboardAppearance='dark'
           />
         </View>
-      </View>
-    </KeyboardAvoidingView>
+        <View style={styles.buttonsContainer}>
+          <View style={profileStyle.button}>
+            <Button
+              color="#ffffff"
+              title="Submit"
+            />
+          </View>
+        </View>
+      </KeyboardAvoidingView>
     </ImageBackground>
   );
 };
@@ -71,13 +72,14 @@ const profileStyle = StyleSheet.create({
 const newStyle = StyleSheet.create({
   text: {
     color: 'white',
-    fontSize: 50,
-    opacity: 1
+    fontSize: 60,
+    opacity: 1,
+    margin: 15
   },
 
   textContainer: {
     alignItems: 'center',
-    backgroundColor: '#463547',
-    opacity: 0.6
+    backgroundColor: 'rgba(70, 53, 71, 0.65)',
+    borderRadius: 30,    
   }
 });

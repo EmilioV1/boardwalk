@@ -17,9 +17,7 @@ export default class SignUpScreen extends Component {
   render() {
     return (
       <ImageBackground source={require('../assets/images/background.png')} style={styles.backgroundImage}>
-      <KeyboardAvoidingView style={styles.container}
-        behavior="padding"
-      >
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
         <View>
           <View style={newStyle.textContainer}>
             <Text style={newStyle.text}>Total</Text>
@@ -78,11 +76,14 @@ export default class SignUpScreen extends Component {
 const newStyle = StyleSheet.create({
   text: {
     color: 'white',
-    fontSize: 50
+    fontSize: 50,
+    opacity: 1,
+    margin: 15
   },
 
   textContainer: {
     alignItems: 'center',
-    backgroundColor: 'rgba(135, 38, 255, 0.3)',
+    backgroundColor: 'rgba(70, 53, 71, 0.65)',
+    borderRadius: 30,
   }
 });
