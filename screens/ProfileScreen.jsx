@@ -7,7 +7,7 @@ import UserImage from '../components/UserImage';
 export default function ProfileScreen() {
 
   return (
-    <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
+    <ImageBackground source={require('../assets/images/background.png')} style={styles.backgroundImage}>
       <KeyboardAvoidingView style={styles.container} behavior="padding">
         <View>
           <View>

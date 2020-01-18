@@ -6,7 +6,7 @@ import styles from '../constants/Styles';
 export default function OldDebt() {
 
   return (
-    <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
+    <ImageBackground source={require('../assets/images/background.png')} style={styles.backgroundImage}>
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <View>
         <Text style={styles.oldDebt}>

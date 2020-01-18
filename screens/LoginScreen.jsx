@@ -31,7 +31,7 @@ export default class LoginScreen extends Component {
     render() {
         return (
 
-            <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
+            <ImageBackground source={require('../assets/images/background.png')} style={styles.backgroundImage}>
                 <KeyboardAvoidingView style={styles.container}
                     behavior="padding"
                 >
