@@ -29,14 +29,17 @@ export default function HomeScreen(props) {
           onPress: () => alert('Yay Staying'),
           style: 'cancel',
         },
-        { text: 'OK', onPress: () => {alert('Logged Out','')
-        setTimeout(() => props.handleAuth(), 2000);
-        
-      } },
+        {
+          text: 'OK', onPress: () => {
+            alert('Logged Out', '')
+            setTimeout(() => props.handleAuth(), 2000);
+
+          }
+        },
       ],
       { cancelable: false },
     );
-   
+
   }
 
   return (
@@ -50,7 +53,7 @@ export default function HomeScreen(props) {
             <Button
               onPress={profile}
               title="Profile"
-              color='#fff'
+              color='black'
             >
             </Button>
           </View>
@@ -77,7 +80,7 @@ export default function HomeScreen(props) {
           color='black'
           onPress={logOut}
           title="Log Out"
-          
+
         >
         </Button>
       </View>
@@ -100,6 +103,9 @@ const homeStyle = StyleSheet.create({
     padding: 5,
     borderRadius: 2,
     marginVertical: 10,
+    shadowOffset: { width: 3, height: 1.5, },
+    shadowColor: 'white',
+    shadowOpacity: 0.5,
     borderRadius: 30,
     fontWeight: 'bold'
   },
@@ -108,6 +114,9 @@ const homeStyle = StyleSheet.create({
     margin: 5,
     width: 100,
     padding: 5,
+    shadowOffset: { width: 3, height: 1.5, },
+    shadowColor: 'white',
+    shadowOpacity: 0.5,
     borderRadius: 30
   }
 });

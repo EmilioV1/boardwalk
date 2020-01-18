@@ -21,10 +21,10 @@ export default class App extends Component {
   render() {
 
     return (
-      <Router>
+      <Router navigationBarStyle={{ backgroundColor: "#485982", borderBottom: '1px solid black' }} titleStyle={{ color: '#fff' }} >
         {this.state.loggedIn ?
           <Stack key="root">
-            <Scene key="home" component={() => <Home handleAuth={this.handleAuth}/>} title="Home" />
+            <Scene key="home" component={() => <Home handleAuth={this.handleAuth} />} title="Home" />
             <Scene key="profile" component={Profile} title="Profile" />
             <Scene key="newDebt" component={NewDebt} title="New Debt" />
             <Scene key="oldDebt" component={OldDebt} title="Old Debt" />

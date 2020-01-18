@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, TextInput, Button, KeyboardAvoidingView, ImageBackground, Image } from 'react-native';
+import { View, TextInput, Button, KeyboardAvoidingView, ImageBackground } from 'react-native';
 import styles from '../constants/Styles'
 import { Actions } from 'react-native-router-flux';
-import Logo from '../components/Logo';
+import LogoHome from '../components/LogoHome';
+import API from '../utils/API';
 
 const credentials = { email: "Emilio@gmail.com", password: "1234" }
 
@@ -25,57 +26,61 @@ export default class LoginScreen extends Component {
         } else {
             alert("Email or password is wrong!");
         }
-    }
+    };
 
     render() {
         return (
 
             <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
-            <KeyboardAvoidingView style={styles.container} 
-            behavior="padding"
-            >
-                <Logo height = {200} width = {200} radius = {30}/>
-                <View>
-                    <TextInput style={styles.inputBox}
-                        placeholder="Email"
-                        placeholderTextColor="#fff"
-                        selectionColor="#fff"
-                        keyboardType="email-address"
-                        onChangeText={(email) => { this.setState({ email }) }}
-                        value={this.state.email}
-                        keyboardAppearance='dark'
-                    />
-                    <TextInput style={styles.inputBox}
-                        placeholder="Password"
-                        placeholderTextColor="#fff"
-                        secureTextEntry={true}
-                        onChangeText={(password) => { this.setState({ password }) }}
-                        value={this.state.password}
-                        keyboardAppearance='dark'
-                    />
-                
-                <View style={styles.buttonsContainer}>
-                    <View style={styles.button}>
-                        <Button
-                            color="#ffffff"
-                            title="Log In"
-                            onPress={this.checkCred}
+                <KeyboardAvoidingView style={styles.container}
+                    behavior="padding"
+                >
+                    <LogoHome height={200} width={200} radius={30} />
+                    <View>
+                        <TextInput style={styles.inputBox}
+                            placeholder="Email"
+                            placeholderTextColor="#fff"
+                            selectionColor="#fff"
+                            keyboardType="email-address"
+                            onChangeText={(email) => { this.setState({ email }) }}
+                            value={this.state.email}
+                            keyboardAppearance='dark'
                         />
+                        <TextInput style={styles.inputBox}
+                            placeholder="Password"
+                            placeholderTextColor="#fff"
+                            secureTextEntry={true}
+                            onChangeText={(password) => { this.setState({ password }) }}
+                            value={this.state.password}
+                            keyboardAppearance='dark'
+                        />
+                        <View style={styles.buttonsContainer}>
+                            <View style={styles.button}>
+                                <Button
+                                    color="#ffffff"
+                                    title="Log In"
+                                    onPress={this.checkCred}
+                                />
+                            </View>
+                            <View style={styles.button}>
+                                <Button
+                                    color="white"
+                                    title="Sign Up"
+                                    onPress={this.signup}
+                                />
+                            </View>
+                        </View>
                     </View>
                     <View style={styles.button}>
                         <Button
                             color="white"
                             title="Sign Up"
-                            onPress={this.signup} 
-                            />
+                            onPress={this.signup}
+                        />
                     </View>
-                </View>
-                </View>
-            <View style = {{height:40}}></View>
-            </KeyboardAvoidingView>
-            </ImageBackground>
-    
+                    <View style={{ height: 40 }}></View>
+                </KeyboardAvoidingView >
+            </ImageBackground >
         );
     };
 };
-
