@@ -28,6 +28,8 @@ export default class OldDebt extends Component {
               placeholderTextColor="#fff"
               selectionColor="#fff"
               keyboardType="email-address"
+              onChangeText={(debtAmount) => { this.setState({ debtAmount }) }}
+              value={this.state.debtAmount}
               keyboardAppearance='dark'
             />
             <TextInput style={styles.inputBox}
@@ -35,6 +37,8 @@ export default class OldDebt extends Component {
               placeholderTextColor="#fff"
               selectionColor="#fff"
               keyboardType="email-address"
+              onChangeText={(monthlyPaymentAmount) => { this.setState({ monthlyPaymentAmount }) }}
+              value={this.state.monthlyPaymentAmount}
               keyboardAppearance='dark'
             />
             <TextInput style={styles.inputBox}
@@ -42,6 +46,8 @@ export default class OldDebt extends Component {
               placeholderTextColor="#fff"
               selectionColor="#fff"
               keyboardType="email-address"
+              onChangeText={(interestRate) => { this.setState({ interestRate }) }}
+              value={this.state.interestRate}
               keyboardAppearance='dark'
             />
           </View>
