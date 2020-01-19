@@ -1,53 +1,51 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, View, TextInput, Button, Text, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, View, TextInput, Button, Text, KeyboardAvoidingView, ImageBackground } from 'react-native';
 import styles from '../constants/Styles';
 import UserImage from '../components/UserImage';
 
 export default function ProfileScreen() {
-
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <UserImage />
-      <View>
-        <TextInput style={styles.inputBox}
-          placeholder="Annual Income"
-          placeholderTextColor="#fff"
-          selectionColor="#fff"
-          keyboardType="email-address"
-          keyboardAppearance='dark'
-        />
-        <TextInput style={styles.inputBox}
-          placeholder="Savings"
-          placeholderTextColor="#fff"
-          selectionColor="#fff"
-          keyboardType="email-address"
-          keyboardAppearance='dark'
-        />
-        <TextInput style={styles.inputBox}
-          placeholder="Debt"
-          placeholderTextColor="#fff"
-          selectionColor="#fff"
-          keyboardType="email-address"
-          keyboardAppearance='dark'
-        />
-        <TextInput style={styles.inputBox}
-          placeholder="Report"
-          placeholderTextColor="#fff"
-          selectionColor="#fff"
-          keyboardType="email-address"
-          keyboardAppearance='dark'
-        />
-      </View>
-      <View style={styles.buttonsContainer}>
-        <View style={profileStyle.button}>
-          <Button
-            color="#ffffff"
-            title="Submit"
-          />
+    <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <View>
+          <View>
+            <UserImage />
+            <TextInput style={styles.inputBox}
+              placeholder="Annual Income"
+              placeholderTextColor="#fff"
+              selectionColor="#fff"
+              keyboardType="email-address"
+              keyboardAppearance='dark'
+            />
+            <TextInput style={styles.inputBox}
+              placeholder="Savings"
+              placeholderTextColor="#fff"
+              selectionColor="#fff"
+              keyboardType="email-address"
+              keyboardAppearance='dark'
+            />
+            <TextInput style={styles.inputBox}
+              placeholder="Debt"
+              placeholderTextColor="#fff"
+              selectionColor="#fff"
+              keyboardType="email-address"
+              keyboardAppearance='dark'
+            />
+          </View>
+          <View style={{ height: 60 }} />
+          <View style={styles.buttonsContainer}>
+            <View style={profileStyle.button}>
+              <Button
+                color="#ffffff"
+                title="Submit"
+              />
+            </View>
+          </View>
+          <View style={{ height: 90 }} />
         </View>
-      </View>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </ImageBackground>
   );
 };
 
@@ -57,23 +55,16 @@ const profileStyle = StyleSheet.create({
     flexDirection: 'column'
   },
   button: {
-    backgroundColor: 'black',
-    margin: 10,
-    width: 300,
+    backgroundColor: '#463547',
+    width: 200,
     padding: 5,
-    borderRadius: 2,
+    borderRadius: 30,
     marginVertical: 10,
-    shadowOffset: { width: 3, height: 1.5, },
-    shadowColor: 'white',
-    shadowOpacity: 0.25,
   },
   logOutButton: {
-    backgroundColor: 'red',
+    backgroundColor: '#463547',
     margin: 5,
     width: 100,
     padding: 5,
-    shadowOffset: { width: 3, height: 1.5, },
-    shadowColor: 'white',
-    shadowOpacity: 0.25,
   }
 });

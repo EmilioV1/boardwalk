@@ -1,28 +1,102 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
-import { StyleSheet, ScrollView, View, TextInput, Button, Text } from 'react-native';
+import { StyleSheet, View, TextInput, Button, Text, KeyboardAvoidingView, ImageBackground } from 'react-native';
+import styles from '../constants/Styles';
+import background from '../assets/images/background.jpg';
 
-export default function OldDebt() {
+export default class OldDebt extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      debtAmount: "",
+      monthlyPaymentAmount: "",
+      interestRate: ""
+    };
+  };
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.oldDebtText}>Hello, I am the old debt screen!</Text>
-    </View>
-  );
-
+  render() {
+    return (
+      <ImageBackground source={background} style={styles.backgroundImage}>
+        <KeyboardAvoidingView style={styles.container} behavior="padding">
+          <View>
+            <View style={newStyle.textContainer}>
+              <Text style={newStyle.text}>Total</Text>
+            </View>
+            <View style={{ height: 80 }}></View>
+            <TextInput style={styles.inputBox}
+              placeholder="Debt Amount"
+              placeholderTextColor="#fff"
+              selectionColor="#fff"
+              keyboardType="email-address"
+              onChangeText={(debtAmount) => { this.setState({ debtAmount }) }}
+              value={this.state.debtAmount}
+              keyboardAppearance='dark'
+            />
+            <TextInput style={styles.inputBox}
+              placeholder="Monthly Payment Amount"
+              placeholderTextColor="#fff"
+              selectionColor="#fff"
+              keyboardType="email-address"
+              onChangeText={(monthlyPaymentAmount) => { this.setState({ monthlyPaymentAmount }) }}
+              value={this.state.monthlyPaymentAmount}
+              keyboardAppearance='dark'
+            />
+            <TextInput style={styles.inputBox}
+              placeholder="Interest Rate"
+              placeholderTextColor="#fff"
+              selectionColor="#fff"
+              keyboardType="email-address"
+              onChangeText={(interestRate) => { this.setState({ interestRate }) }}
+              value={this.state.interestRate}
+              keyboardAppearance='dark'
+            />
+          </View>
+          <View style={styles.buttonsContainer}>
+            <View style={profileStyle.button}>
+              <Button
+                color="#ffffff"
+                title="Submit"
+              />
+            </View>
+          </View>
+        </KeyboardAvoidingView>
+      </ImageBackground>
+    );
+  }
 };
 
-const styles = StyleSheet.create({
+const profileStyle = StyleSheet.create({
+  buttonsContainer: {
+    justifyContent: 'center',
+    flexDirection: 'column'
+  },
+  button: {
+    backgroundColor: '#463547',
+    margin: 10,
+    width: 300,
+    padding: 5,
+    borderRadius: 30,
+    marginVertical: 10,
+  },
+  logOutButton: {
+    backgroundColor: '#463547',
+    margin: 5,
+    width: 100,
+    padding: 5,
+  }
+});
 
-  container: {
-    flex: 1,
-    backgroundColor: '#17233f',
-    alignItems: 'center',
-    justifyContent: 'center'
+const newStyle = StyleSheet.create({
+  text: {
+    color: 'white',
+    fontSize: 60,
+    opacity: 1,
+    margin: 15
   },
 
-  oldDebtText: {
-    color: '#fff'
+  textContainer: {
+    alignItems: 'center',
+    backgroundColor: 'rgba(70, 53, 71, 0.65)',
+    borderRadius: 30,
   }
-
 });

@@ -6,14 +6,14 @@ export default class UserImage extends Component {
         return (
             <View style={styles.container}>
                 <Image
-                    style={{ width: 150, height: 150 }}
+                    style={{ width: 200, height: 200, borderRadius: 125 }}
                     source={{uri: 'https://i.kym-cdn.com/photos/images/original/000/456/353/05a.jpg'}}
                 />
                 <Text style={styles.name}>Nicholas Cage</Text>
             </View>
         );
-    }
-}
+    };
+};
 
 const styles = StyleSheet.create({
 
@@ -23,8 +23,7 @@ const styles = StyleSheet.create({
 
     name: {
         padding: 10,
-        fontSize: 20,
+        fontSize: 40,
         color: '#fff',
     }
-
 });
