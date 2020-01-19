@@ -57,23 +57,17 @@ const profileStyle = StyleSheet.create({
     flexDirection: 'column'
   },
   button: {
-    backgroundColor: 'black',
+    backgroundColor: '#463547',
     margin: 10,
     width: 300,
     padding: 5,
     borderRadius: 2,
     marginVertical: 10,
-    shadowOffset: { width: 3, height: 1.5, },
-    shadowColor: 'white',
-    shadowOpacity: 0.25,
   },
   logOutButton: {
-    backgroundColor: 'red',
+    backgroundColor: '#463547',
     margin: 5,
     width: 100,
     padding: 5,
-    shadowOffset: { width: 3, height: 1.5, },
-    shadowColor: 'white',
-    shadowOpacity: 0.25,
   }
 });
