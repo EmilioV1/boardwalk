@@ -9,19 +9,17 @@ import NewDebt from './screens/NewDebt';
 import OldDebt from './screens/OldDebt';
 
 export default class App extends Component {
-
   state = {
-    loggedIn: false
+    loggedIn: false,
   };
 
-  handleAuth = () => {
+  handleAuth = (data) => {
     this.setState({ loggedIn: !this.state.loggedIn });
   };
 
   render() {
-
     return (
-      <Router navigationBarStyle={{ backgroundColor: "#3b2c3b"}} titleStyle={{ color: '#fff' }} >
+      <Router navigationBarStyle={{ backgroundColor: "#3b2c3b" }} titleStyle={{ color: '#fff' }} >
         {this.state.loggedIn ?
           <Stack key="root">
             <Scene key="home" component={() => <Home handleAuth={this.handleAuth} />} title="Home" />
@@ -33,7 +31,7 @@ export default class App extends Component {
 
           <Stack key="root" >
             <Scene key="login" component={() => <Login handleAuth={this.handleAuth} />} title="Login" />
-            <Scene key="signup" component={Signup} title="Signup" />
+            <Scene key="signup" component={() => <Signup handleAuth={this.handleAuth} />} title="Signup" />
           </Stack>}
       </Router>
     );

@@ -39,11 +39,10 @@ export default function HomeScreen(props) {
       ],
       { cancelable: false },
     );
-
-  }
+  };
 
   return (
-    <ImageBackground source={require('../assets/images/background.png')} style={styles.backgroundImage}>
+    <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
       <View style={styles.container}>
         <LogoHome height={200} width={200} radius={20} />
         <View>

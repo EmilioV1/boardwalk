@@ -4,7 +4,8 @@ import { StyleSheet, View, Image, Text } from 'react-native';
 export default class LogoHome extends Component {
     constructor(props) {
         super(props);
-    }
+    };
+    
     render() {
         return (
             <View style={styles.container}>

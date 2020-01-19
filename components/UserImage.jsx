@@ -12,8 +12,8 @@ export default class UserImage extends Component {
                 <Text style={styles.name}>Nicholas Cage</Text>
             </View>
         );
-    }
-}
+    };
+};
 
 const styles = StyleSheet.create({
 
@@ -26,5 +26,4 @@ const styles = StyleSheet.create({
         fontSize: 40,
         color: '#fff',
     }
-
 });

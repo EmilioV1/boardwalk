@@ -1,51 +1,62 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
 import { StyleSheet, View, TextInput, Button, Text, KeyboardAvoidingView, ImageBackground } from 'react-native';
 import styles from '../constants/Styles';
+import background from '../assets/images/background.jpg';
 
-export default function OldDebt() {
+export default class OldDebt extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      debtAmount: "",
+      monthlyPaymentAmount: "",
+      interestRate: ""
+    };
+  };
 
-  return (
-    <ImageBackground source={require('../assets/images/background.png')} style={styles.backgroundImage}>
-      <KeyboardAvoidingView style={styles.container} behavior="padding">
-        <View>
-          <View style={newStyle.textContainer}>
-            <Text style={newStyle.text}>Total</Text>
-          </View>
-          <View style={{ height: 80 }}></View>
-          <TextInput style={styles.inputBox}
-            placeholder="Debt Amount"
-            placeholderTextColor="#fff"
-            selectionColor="#fff"
-            keyboardType="email-address"
-            keyboardAppearance='dark'
-          />
-          <TextInput style={styles.inputBox}
-            placeholder="Monthly Payment Amount"
-            placeholderTextColor="#fff"
-            selectionColor="#fff"
-            keyboardType="email-address"
-            keyboardAppearance='dark'
-          />
-          <TextInput style={styles.inputBox}
-            placeholder="Interest Rate"
-            placeholderTextColor="#fff"
-            selectionColor="#fff"
-            keyboardType="email-address"
-            keyboardAppearance='dark'
-          />
-        </View>
-        <View style={styles.buttonsContainer}>
-          <View style={profileStyle.button}>
-            <Button
-              color="#ffffff"
-              title="Submit"
+  render() {
+    return (
+      <ImageBackground source={background} style={styles.backgroundImage}>
+        <KeyboardAvoidingView style={styles.container} behavior="padding">
+          <View>
+            <View style={newStyle.textContainer}>
+              <Text style={newStyle.text}>Total</Text>
+            </View>
+            <View style={{ height: 80 }}></View>
+            <TextInput style={styles.inputBox}
+              placeholder="Debt Amount"
+              placeholderTextColor="#fff"
+              selectionColor="#fff"
+              keyboardType="email-address"
+              keyboardAppearance='dark'
+            />
+            <TextInput style={styles.inputBox}
+              placeholder="Monthly Payment Amount"
+              placeholderTextColor="#fff"
+              selectionColor="#fff"
+              keyboardType="email-address"
+              keyboardAppearance='dark'
+            />
+            <TextInput style={styles.inputBox}
+              placeholder="Interest Rate"
+              placeholderTextColor="#fff"
+              selectionColor="#fff"
+              keyboardType="email-address"
+              keyboardAppearance='dark'
             />
           </View>
-        </View>
-      </KeyboardAvoidingView>
-    </ImageBackground>
-  );
+          <View style={styles.buttonsContainer}>
+            <View style={profileStyle.button}>
+              <Button
+                color="#ffffff"
+                title="Submit"
+              />
+            </View>
+          </View>
+        </KeyboardAvoidingView>
+      </ImageBackground>
+    );
+  }
 };
 
 const profileStyle = StyleSheet.create({

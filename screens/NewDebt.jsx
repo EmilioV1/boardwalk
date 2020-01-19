@@ -16,7 +16,7 @@ export default class SignUpScreen extends Component {
 
   render() {
     return (
-      <ImageBackground source={require('../assets/images/background.png')} style={styles.backgroundImage}>
+      <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
         <KeyboardAvoidingView style={styles.container} behavior="padding">
           <View>
             <View style={newStyle.textContainer}>
