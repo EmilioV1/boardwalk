@@ -5,29 +5,35 @@ import { Actions } from 'react-native-router-flux';
 import LogoHome from '../components/LogoHome';
 import API from '../utils/API';
 
-const credentials = { email: "Emilio@gmail.com", password: "1234" }
 
 export default class LoginScreen extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: "",
-            password: ""
-        }
+    state = {
+        email: "",
+        password: "",
+        error: ""
     };
 
     signup() {
         Actions.signup();
     };
 
-    checkCred = () => {
-        if (this.state.email === credentials.email && this.state.password === credentials.password) {
-            this.props.handleAuth();
-        } else {
-            alert("Email or password is wrong!");
-        }
-    };
+    handleSubmit = event =>{
+        event.preventDefault();
 
+        const { email, password } = this.state; //grab the current state for email and password
+        console.log(email); // console.log to see if catch the input email and password
+        console.log(password);
+        API.login({email:email,password:password}) // grab the object's email and password
+        .then(result => {
+            this.setState({ error: "" });	
+                console.log(result.data);	
+                this.props.handleAuth(result.data);// match to app.jsx handleAuth	
+            })	
+            .catch(err => {	
+                console.log(err);	
+                this.setState({error: err});	
+            });
+    };
     render() {
         return (
             <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
@@ -58,7 +64,7 @@ export default class LoginScreen extends Component {
                                 <Button
                                     color="#ffffff"
                                     title="Log In"
-                                    onPress={this.checkCred}
+                                    onPress={this.handleSubmit}
                                 />
                             </View>
                             <View style={styles.button}>
