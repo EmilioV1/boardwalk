@@ -90,7 +90,7 @@ export default class SignUpScreen extends Component {
                                 <Button
                                     color="#ffffff"
                                     title="Submit"
-                                    onPress={this.checkCred}
+                                    onPress={this.handleSubmit}
                                 />
                             </View>
                         </View>
