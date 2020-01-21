@@ -5,14 +5,36 @@ import styles from '../constants/Styles';
 import background from '../assets/images/background.jpg';
 
 export default class OldDebt extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      debtAmount: "",
-      monthlyPaymentAmount: "",
-      interestRate: ""
-    };
+  state = {
+    debtAmount: "",
+    monthlyPaymentAmount: "",
+    oldinterestRate: ""
   };
+
+  handleSubmit = event => {
+
+    event.preventDefault();
+
+    const { debtAmount, monthlyPaymentAmount, oldinterestRate} = this.state; //grab the current state for email and password
+    console.log(debtAmount);
+    console.log(monthlyPaymentAmount);
+    console.log(oldinterestRate);
+    API.saveDebt({ debtAmount: debtAmount, monthlyPaymentAmount: monthlyPaymentAmount, oldinterestRate: oldinterestRate })
+        .then(result => {
+            console.log(result);
+            this.setState({
+                debtAmount: '',
+                monthlyPaymentAmount: '',
+                oldinterestRate: '',
+                error: ''
+            });
+            this.props.handleAuth(result.data);
+        })
+        .catch(err => {
+            console.log(err);
+            this.setState({ error: err });
+        });
+};
 
   render() {
     return (
@@ -46,8 +68,8 @@ export default class OldDebt extends Component {
               placeholderTextColor="#fff"
               selectionColor="#fff"
               keyboardType="email-address"
-              onChangeText={(interestRate) => { this.setState({ interestRate }) }}
-              value={this.state.interestRate}
+              onChangeText={(oldinterestRate) => { this.setState({ oldinterestRate }) }}
+              value={this.state.oldinterestRate}
               keyboardAppearance='dark'
             />
           </View>
@@ -56,6 +78,7 @@ export default class OldDebt extends Component {
               <Button
                 color="#ffffff"
                 title="Submit"
+                onPress={this.handleSubmit}
               />
             </View>
           </View>
