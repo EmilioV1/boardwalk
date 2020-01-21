@@ -10,7 +10,7 @@ export default class OldDebt extends Component {
     this.state = {
       debtAmount: "",
       monthlyPaymentAmount: "",
-      oldInterestRate: ""
+      interestRate: ""
     };
 
     handledebtAmountChange = value => {
@@ -27,6 +27,11 @@ export default class OldDebt extends Component {
   };
 
   render() {
+      
+    //Calculation for amount of principle paid in a given year
+    let tot = [monthlyPaymentAmount - (finance.CI(interestRate, 12, debtAmount, 1))] * 12;
+    let Total = Math.round(tot).toFixed();
+
     return (
       <ImageBackground source={background} style={styles.backgroundImage}>
         <KeyboardAvoidingView style={styles.container} behavior="padding">

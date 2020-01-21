@@ -31,6 +31,11 @@ export default class SignUpScreen extends Component {
   };
 
   render() {
+
+    //Compound Interest Calculation
+    let tot = finance.CI(interestRate, 12, (loanAmount-downPayment), loanTerm);
+    let Total = Math.round(tot).toFixed();
+
     return (
       <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>
         <KeyboardAvoidingView style={styles.container} behavior="padding">
