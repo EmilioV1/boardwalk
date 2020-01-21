@@ -4,19 +4,26 @@ import { StyleSheet, View, TextInput, Button, Text, KeyboardAvoidingView, ImageB
 import styles from '../constants/Styles';
 import background from '../assets/images/background.jpg';
 
-<<<<<<< HEAD
-
-
-
-=======
 export default class OldDebt extends Component {
   constructor(props) {
     super(props);
     this.state = {
       debtAmount: "",
       monthlyPaymentAmount: "",
-      interestRate: ""
+      oldInterestRate: ""
     };
+
+    handledebtAmountChange = value => {
+        this.setState({debtAmount: value});
+    };
+
+    handlemonthlyPaymentAmountChange = value => {
+        this.setState({monthlyPaymentAmount: value});
+    };
+
+    handleinterestRateChange = value => {
+        this.setState({oldInterestRate: value});
+      };
   };
 
   render() {
@@ -69,7 +76,6 @@ export default class OldDebt extends Component {
     );
   }
 };
->>>>>>> 908d5788faf2ecdd5783e5caf368d9193352f4ca
 
 const profileStyle = StyleSheet.create({
   buttonsContainer: {

@@ -3,16 +3,6 @@ import { Actions } from 'react-native-router-flux';
 import { StyleSheet, View, KeyboardAvoidingView, Button, TextInput, Text, ImageBackground } from 'react-native';
 import styles from '../constants/Styles';
 
-<<<<<<< HEAD
-
-
-
-  container: {
-    flex: 1,
-    backgroundColor: '#17233f',
-    alignItems: 'center',
-    justifyContent: 'center',
-=======
 export default class SignUpScreen extends Component {
   constructor(props) {
     super(props);
@@ -21,6 +11,22 @@ export default class SignUpScreen extends Component {
       downPayment: "",
       loanTerm: "",
       interestRate: ""
+    };
+
+    handleloanAmountChange = value => {
+      this.setState({loanAmount: value});
+    };
+
+    handledownPaymentChange = value => {
+      this.setState({downPayment: value});
+    };
+
+    handleloanTermChange = value => {
+      this.setState({loanTerm: value});
+    };
+
+    handleinterestRateChange = value => {
+      this.setState({interestRate: value});
     };
   };
 
@@ -89,7 +95,6 @@ const newStyle = StyleSheet.create({
     fontSize: 50,
     opacity: 1,
     margin: 15
->>>>>>> 908d5788faf2ecdd5783e5caf368d9193352f4ca
   },
 
   textContainer: {
