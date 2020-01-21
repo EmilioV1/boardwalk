@@ -2,33 +2,42 @@ import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
 import { StyleSheet, View, KeyboardAvoidingView, Button, TextInput, Text, ImageBackground } from 'react-native';
 import styles from '../constants/Styles';
+import API from '../utils/API';
 
-export default class SignUpScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loanAmount: "",
-      downPayment: "",
-      loanTerm: "",
-      interestRate: ""
-    };
+export default class NewDbet extends Component {
+  state = {
+        loanAmount: "",
+        downPayment: "",
+        loanTerm: "",
+        interestRate: ""
+      };
 
-    handleloanAmountChange = value => {
-      this.setState({loanAmount: value});
-    };
+      handleSubmit = event => {
 
-    handledownPaymentChange = value => {
-      this.setState({downPayment: value});
-    };
+        event.preventDefault();
 
-    handleloanTermChange = value => {
-      this.setState({loanTerm: value});
+        const { loanAmount, downPayment, loanTerm, interestRate } = this.state; //grab the current state for email and password
+        console.log(loanAmount);
+        console.log(downPayment);
+        console.log(loanTerm);
+        console.log(interestRate);
+        API.saveDebt({ loanAmount: loanAmount, downPayment: downPayment, loanTerm: loanTerm, interestRate: interestRate })
+            .then(result => {
+                console.log(result);
+                this.setState({
+                    loanAmount: '',
+                    downPayment: '',
+                    loanTerm: '',
+                    interestRate: '',
+                    error: ''
+                });
+                this.props.handleAuth(result.data);
+            })
+            .catch(err => {
+                console.log(err);
+                this.setState({ error: err });
+            });
     };
-
-    handleinterestRateChange = value => {
-      this.setState({interestRate: value});
-    };
-  };
 
   render() {
 
@@ -83,6 +92,7 @@ export default class SignUpScreen extends Component {
                 <Button
                   color="#ffffff"
                   title="Submit"
+                  onPress={this.handleSubmit}
                 />
               </View>
             </View>

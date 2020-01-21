@@ -8,7 +8,6 @@ export default {
   signup: function (body) {
     return axios({
       method: 'post',
-      // headers: { 'content-type': 'application/json' },
       url: heroku + "/api/users",
       data: body // grabing the object body from api
     });
@@ -16,9 +15,22 @@ export default {
   login: function (body) {
     return axios({
       method: 'post',
-      // headers:{ 'content-type': 'application/json' },
       url: heroku + "/auth/login",
       data: body
     });
+  },
+  saveDebt: function(body){
+    return axios({
+      method: 'post',
+      url: heroku + "/api/debts",
+      data:body
+    });
+  },
+  getDebt: function(body){
+    return axios({
+      method: 'get',
+      url: heroku + "/api/debt/" + id,
+      data: body
+    })
   }
 };
