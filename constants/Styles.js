@@ -1,7 +1,7 @@
 export default {
 
     container: {
-        backgroundColor: '#17233f',
+        backgroundColor: '#17233f00',
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-evenly'
@@ -11,7 +11,7 @@ export default {
         width: 300,
         padding: 5,
         backgroundColor: 'rgba(255, 255, 255, 0.3)',
-        borderRadius: 2,
+        borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 30,
         color: '#fff',
@@ -24,8 +24,14 @@ export default {
     },
 
     button: {
-        backgroundColor: 'black',
+        backgroundColor: '#463547',
         margin: 10,
-        fontWeight: '500'
-    }
+        borderRadius: 30,
+        padding: 5,
+    },
+
+    backgroundImage:{
+        flex: 1,
+        resizeMode: 'cover'
+    },
 };
