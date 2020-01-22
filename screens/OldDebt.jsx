@@ -39,8 +39,11 @@ export default class OldDebt extends Component {
 
   render() {
       
-    //Calculation for amount of principle paid in a given year
-    let tot = [monthlyPaymentAmount - (finance.CI(interestRate, 12, debtAmount, 1))] * 12;
+    // //Calculation for amount of principle paid in a given year
+    // let tot = [monthlyPaymentAmount - (finance.CI(interestRate, 12, debtAmount, 1))] * 12;
+    // let Total = Math.round(tot).toFixed();
+
+    let tot = [monthlyPaymentAmount - (((oldInterestRate/100) * debtAmount)/12)] * 12;
     let Total = Math.round(tot).toFixed();
 
     return (
