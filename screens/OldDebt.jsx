@@ -28,14 +28,15 @@ export default class OldDebt extends Component {
 
     API.saveDebt({ debtAmount: debtAmount, monthlyPaymentAmount: monthlyPaymentAmount, oldinterestRate: oldinterestRate })
         .then(result => {
-            console.log(result);
+            result = Total;
+            //console.log(result);
             this.setState({
                 debtAmount: '',
                 monthlyPaymentAmount: '',
                 oldinterestRate: '',
                 error: ''
             });
-            this.props.handleAuth(result.data);
+            //this.props.handleAuth(result.data);
         })
         .catch(err => {
             console.log(err);

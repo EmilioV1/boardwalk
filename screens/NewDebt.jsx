@@ -21,6 +21,7 @@ export default class NewDbet extends Component {
         console.log(downPayment);
         console.log(loanTerm);
         console.log(interestRate);
+        
         //Compound Interest rate calculation with the final amount
         let tot = [loanAmount - downPayment] * [Math.pow((1+(interestRate/300)), (3 * loanTerm))];
         let Total = Math.round(tot).toFixed();
