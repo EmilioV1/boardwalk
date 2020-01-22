@@ -21,9 +21,14 @@ export default class NewDbet extends Component {
         console.log(downPayment);
         console.log(loanTerm);
         console.log(interestRate);
-        API.saveDebt({ loanAmount: loanAmount, downPayment: downPayment, loanTerm: loanTerm, interestRate: interestRate })
+        //Compound Interest rate calculation with the final amount
+        let tot = [loanAmount - downPayment] * [Math.pow((1+(interestRate/300)), (3 * loanTerm))];
+        let Total = Math.round(tot).toFixed();
+        console.log(Total);
+        
+        API.saveDebt({ loanAmount: loanAmount, downPayment: downPayment, loanTerm: loanTerm, interestRate: interestRate, Total: Total })
             .then(result => {
-                console.log(result);
+              console.log(result);
                 this.setState({
                     loanAmount: '',
                     downPayment: '',
@@ -37,20 +42,9 @@ export default class NewDbet extends Component {
                 console.log(err);
                 this.setState({ error: err });
             });
-
-    let tot = Math.pow(((loanAmount - downPayment)*(1+(interestRate/300))),(3 * loanTerm));
-    let Total = Math.round(tot).toFixed();
-    //Total = result;
-
-    };
+          };
 
   render() {
-
-    // //Compound Interest Calculation
-    // let tot = finance.CI(interestRate, 12, (loanAmount-downPayment), loanTerm);
-    // let Total = Math.round(tot).toFixed();
-
-    
 
     return (
       <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>

@@ -20,6 +20,12 @@ export default class OldDebt extends Component {
     console.log(debtAmount);
     console.log(monthlyPaymentAmount);
     console.log(oldinterestRate);
+
+    //Principal paid in one year calculation
+    let tot = [monthlyPaymentAmount - (((oldInterestRate/100) * debtAmount)/12)] * 12;
+    let Total = Math.round(tot).toFixed();
+    console.log(Total);
+
     API.saveDebt({ debtAmount: debtAmount, monthlyPaymentAmount: monthlyPaymentAmount, oldinterestRate: oldinterestRate })
         .then(result => {
             console.log(result);
@@ -35,19 +41,11 @@ export default class OldDebt extends Component {
             console.log(err);
             this.setState({ error: err });
         });
-    let tot = [monthlyPaymentAmount - (((oldInterestRate/100) * debtAmount)/12)] * 12;
-    let Total = Math.round(tot).toFixed();
+    
 };
 
   render() {
       
-    // //Calculation for amount of principle paid in a given year
-    // let tot = [monthlyPaymentAmount - (finance.CI(interestRate, 12, debtAmount, 1))] * 12;
-    // let Total = Math.round(tot).toFixed();
-
-    let tot = [monthlyPaymentAmount - (((oldInterestRate/100) * debtAmount)/12)] * 12;
-    let Total = Math.round(tot).toFixed();
-
     return (
       <ImageBackground source={background} style={styles.backgroundImage}>
         <KeyboardAvoidingView style={styles.container} behavior="padding">
