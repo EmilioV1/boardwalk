@@ -41,8 +41,11 @@ export default class NewDbet extends Component {
 
   render() {
 
-    //Compound Interest Calculation
-    let tot = finance.CI(interestRate, 12, (loanAmount-downPayment), loanTerm);
+    // //Compound Interest Calculation
+    // let tot = finance.CI(interestRate, 12, (loanAmount-downPayment), loanTerm);
+    // let Total = Math.round(tot).toFixed();
+
+    let tot = Math.pow(((loanAmount - downPayment)*(1+(interestRate/300))),(3 * loanTerm));
     let Total = Math.round(tot).toFixed();
 
     return (
