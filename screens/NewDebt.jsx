@@ -28,7 +28,8 @@ export default class NewDbet extends Component {
         
         API.saveDebt({ loanAmount: loanAmount, downPayment: downPayment, loanTerm: loanTerm, interestRate: interestRate, Total: Total })
             .then(result => {
-              console.log(result);
+              result = Total;
+              //console.log(result);
                 this.setState({
                     loanAmount: '',
                     downPayment: '',
@@ -36,7 +37,7 @@ export default class NewDbet extends Component {
                     interestRate: '',
                     error: ''
                 });
-                this.props.handleAuth(result.data);
+                //this.props.handleAuth(result.data);
             })
             .catch(err => {
                 console.log(err);
