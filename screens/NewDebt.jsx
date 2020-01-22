@@ -37,6 +37,11 @@ export default class NewDbet extends Component {
                 console.log(err);
                 this.setState({ error: err });
             });
+
+    let tot = Math.pow(((loanAmount - downPayment)*(1+(interestRate/300))),(3 * loanTerm));
+    let Total = Math.round(tot).toFixed();
+    //Total = result;
+
     };
 
   render() {
@@ -45,8 +50,7 @@ export default class NewDbet extends Component {
     // let tot = finance.CI(interestRate, 12, (loanAmount-downPayment), loanTerm);
     // let Total = Math.round(tot).toFixed();
 
-    let tot = Math.pow(((loanAmount - downPayment)*(1+(interestRate/300))),(3 * loanTerm));
-    let Total = Math.round(tot).toFixed();
+    
 
     return (
       <ImageBackground source={require('../assets/images/background.jpg')} style={styles.backgroundImage}>

@@ -35,6 +35,8 @@ export default class OldDebt extends Component {
             console.log(err);
             this.setState({ error: err });
         });
+    let tot = [monthlyPaymentAmount - (((oldInterestRate/100) * debtAmount)/12)] * 12;
+    let Total = Math.round(tot).toFixed();
 };
 
   render() {
