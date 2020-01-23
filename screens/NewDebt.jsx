@@ -36,6 +36,7 @@ export default class NewDbet extends Component {
                     downPayment: '',
                     loanTerm: '',
                     interestRate: '',
+                    Total: '',
                     error: ''
                 });
                 //this.props.handleAuth(result.data);
@@ -54,6 +55,7 @@ export default class NewDbet extends Component {
           <View>
             <View style={newStyle.textContainer}>
               <Text style={newStyle.text}>Total</Text>
+              
             </View>
             <View style={{ height: 80 }}></View>
             <TextInput style={styles.inputBox}

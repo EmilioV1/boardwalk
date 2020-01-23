@@ -22,11 +22,11 @@ export default class OldDebt extends Component {
     console.log(oldinterestRate);
 
     //Principal paid in one year calculation
-    let tot = [monthlyPaymentAmount - (((oldInterestRate/100) * debtAmount)/12)] * 12;
+    let tot = (monthlyPaymentAmount - (((oldinterestRate/100) * debtAmount)/12)) * 12;
     let Total = Math.round(tot).toFixed();
     console.log(Total);
 
-    API.saveDebt({ debtAmount: debtAmount, monthlyPaymentAmount: monthlyPaymentAmount, oldinterestRate: oldinterestRate })
+    API.saveDebt({ debtAmount: debtAmount, monthlyPaymentAmount: monthlyPaymentAmount, oldinterestRate: oldinterestRate, Total: Total })
         .then(result => {
             result = Total;
             //console.log(result);
@@ -34,6 +34,7 @@ export default class OldDebt extends Component {
                 debtAmount: '',
                 monthlyPaymentAmount: '',
                 oldinterestRate: '',
+                Total: '',
                 error: ''
             });
             //this.props.handleAuth(result.data);
