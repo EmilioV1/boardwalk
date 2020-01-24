@@ -3,13 +3,15 @@ import { Actions } from 'react-native-router-flux';
 import { StyleSheet, View, KeyboardAvoidingView, Button, TextInput, Text, ImageBackground } from 'react-native';
 import styles from '../constants/Styles';
 import API from '../utils/API';
+//import Finance from 'financejs';
 
 export default class NewDbet extends Component {
   state = {
         loanAmount: "",
         downPayment: "",
         loanTerm: "",
-        interestRate: ""
+        interestRate: "",
+        total: ""
       };
 
       handleSubmit = event => {
@@ -24,19 +26,19 @@ export default class NewDbet extends Component {
         
         //Compound Interest rate calculation with the final amount
         let tot = [loanAmount - downPayment] * [Math.pow((1+(interestRate/300)), (3 * loanTerm))];
-        let Total = Math.round(tot).toFixed();
-        console.log(Total);
+        let currentTotal = Math.round(tot).toFixed();
+        console.log(currentTotal);
         
-        API.saveDebt({ loanAmount: loanAmount, downPayment: downPayment, loanTerm: loanTerm, interestRate: interestRate, Total: Total })
+        API.saveDebt({ loanAmount: loanAmount, downPayment: downPayment, loanTerm: loanTerm, interestRate: interestRate })
             .then(result => {
-              result = Total;
-              //console.log(result);
+              //result = Total;
+              console.log(result);
                 this.setState({
                     loanAmount: '',
                     downPayment: '',
                     loanTerm: '',
                     interestRate: '',
-                    Total: '',
+                    total: currentTotal,
                     error: ''
                 });
                 //this.props.handleAuth(result.data);
@@ -54,7 +56,7 @@ export default class NewDbet extends Component {
         <KeyboardAvoidingView style={styles.container} behavior="padding">
           <View>
             <View style={newStyle.textContainer}>
-              <Text style={newStyle.text}>Total</Text>
+              <Text style={newStyle.text}>{(this.state.total ? "$" + this.state.total : "Enter a new loan:")}</Text>
               
             </View>
             <View style={{ height: 80 }}></View>
@@ -70,7 +72,7 @@ export default class NewDbet extends Component {
             <TextInput style={styles.inputBox}
               placeholder=" Down Payment"
               placeholderTextColor="#fff"
-              secureTextEntry={true}
+              //secureTextEntry={true}
               onChangeText={(downPayment) => { this.setState({ downPayment }) }}
               value={this.state.downPayment}
               keyboardAppearance='dark'
@@ -87,7 +89,7 @@ export default class NewDbet extends Component {
             <TextInput style={styles.inputBox}
               placeholder="Interest Rate"
               placeholderTextColor="#fff"
-              secureTextEntry={true}
+              //secureTextEntry={true}
               onChangeText={(interestRate) => { this.setState({ interestRate }) }}
               value={this.state.interestRate}
               keyboardAppearance='dark'

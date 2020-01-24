@@ -9,7 +9,8 @@ export default class OldDebt extends Component {
   state = {
     debtAmount: "",
     monthlyPaymentAmount: "",
-    oldinterestRate: ""
+    oldinterestRate: "",
+    total: ""
   };
 
   handleSubmit = event => {
@@ -23,18 +24,18 @@ export default class OldDebt extends Component {
 
     //Principal paid in one year calculation
     let tot = (monthlyPaymentAmount - (((oldinterestRate/100) * debtAmount)/12)) * 12;
-    let Total = Math.round(tot).toFixed();
-    console.log(Total);
+    let currentTotal = Math.round(tot).toFixed();
+    console.log(currentTotal);
 
-    API.saveDebt({ debtAmount: debtAmount, monthlyPaymentAmount: monthlyPaymentAmount, oldinterestRate: oldinterestRate, Total: Total })
+    API.saveDebt({ debtAmount: debtAmount, monthlyPaymentAmount: monthlyPaymentAmount, oldinterestRate: oldinterestRate })
         .then(result => {
-            result = Total;
-            //console.log(result);
+            //result = Total;
+            console.log(result);
             this.setState({
                 debtAmount: '',
                 monthlyPaymentAmount: '',
                 oldinterestRate: '',
-                Total: '',
+                total: currentTotal,
                 error: ''
             });
             //this.props.handleAuth(result.data);
@@ -53,7 +54,7 @@ export default class OldDebt extends Component {
         <KeyboardAvoidingView style={styles.container} behavior="padding">
           <View>
             <View style={newStyle.textContainer}>
-              <Text style={newStyle.text}>Total</Text>
+              <Text style={newStyle.text}>{this.state.total ? "$" + this.state.total : "Total"}</Text>
             </View>
             <View style={{ height: 80 }}></View>
             <TextInput style={styles.inputBox}
