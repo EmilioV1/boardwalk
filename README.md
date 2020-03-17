@@ -34,6 +34,3 @@ Application for financial goal planning. (Insert Blurb) Click [here](Insert Depl
 
 ## Author(s)
 * [Emilio Valladares](https://github.com/emiliov1/)
-* [Ria Anderson](https://github.com/RiaAnderson/)
-* [Neha Nehru](https://github.com/Neha039/)
-* [Nicky Ying](https://github.com/supercarboy88/)
