@@ -34,3 +34,4 @@ Application for financial goal planning. (Insert Blurb) Click [here](Insert Depl
 
 ## Author(s)
 * [Emilio Valladares](https://github.com/emiliov1/)
+* [Sardor Botiroff](https://github.com/sbotiroff/)
